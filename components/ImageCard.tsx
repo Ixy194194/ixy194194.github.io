@@ -6,7 +6,15 @@ interface ImageCardProps {
 }
 
 const ImageCard: FC<ImageCardProps> = ({ src }) => {
-  return <Image src={src} width={200} height={500} className="shadow-md rounded-xl" />;
+  return (
+    <Image
+      src={src}
+      width={300}
+      height={400}
+      className="shadow-md rounded-xl object-cover w-[300px] h-[400px]"
+      alt="TEST"
+    />
+  );
 };
 
 export default ImageCard;
