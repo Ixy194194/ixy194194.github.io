@@ -3,15 +3,17 @@ import { FC } from 'react';
 
 interface ImageCardProps {
   src: string;
+  width: number;
+  height: number;
 }
 
-const ImageCard: FC<ImageCardProps> = ({ src }) => {
+const ImageCard: FC<ImageCardProps> = ({ width, height, src }) => {
   return (
     <Image
       src={src}
-      width={300}
-      height={400}
-      className="shadow-md rounded-xl object-cover w-[300px] h-[400px]"
+      width={width}
+      height={height}
+      className={`shadow-md rounded-xl object-cover w-[${width}px] h-[${height}px]`}
       alt="TEST"
     />
   );
