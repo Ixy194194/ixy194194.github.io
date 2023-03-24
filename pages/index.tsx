@@ -26,6 +26,17 @@ export default function Home() {
           <ImageCard src="/dummy.jpg" width={180} height={200} />
           <ImageCard src="/dummy.jpg" width={180} height={100} />
         </div>
+
+        {/*SNSリンク*/}
+        <div className="absolute bottom-0 left-0 w-full h-20 bg-slate-50 z-10">
+            <div className="flex justify-center items-center h-full">
+                <a href="https://twitter.com/Ixy" target="_blank" rel="noopener noreferrer" className="ml-4">Twitter</a>
+                <a href="https://www.instagram.com/ixy__194/?hl=ja" target="_blank" rel="noopener noreferrer" className="ml-4">Instagram</a>
+                <a href="https://www.youtube.com/@ixy" target="_blank" rel="noopener noreferrer" className="ml-4">YouTube</a>
+                <a href="https://ixy.fanbox.cc/" target="_blank" rel="noopener noreferrer" className="ml-4">fanbox</a>
+                <a href="https://ci-en.dlsite.com/creator/5868" target="_blank" rel="noopener noreferrer" className="ml-4">Ci-en</a>
+            </div>
+        </div>
       </div>
     </>
   );
