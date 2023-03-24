@@ -15,7 +15,17 @@ export default function Home() {
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-12 z-10 opacity-25">
           <ImageCard src="/dummy.jpg" width={180} height={300} />
-
+          <ImageCard src="/dummy.jpg" width={180} height={500} />
+          <ImageCard src="/dummy.jpg" width={180} height={300} />
+          <ImageCard src="/dummy.jpg" width={180} height={200} />
+          <ImageCard src="/dummy.jpg" width={180} height={300} />
+          <ImageCard src="/dummy.jpg" width={180} height={400} />
+          <ImageCard src="/dummy.jpg" width={180} height={300} />
+          <ImageCard src="/dummy.jpg" width={180} height={600} />
+          <ImageCard src="/dummy.jpg" width={180} height={300} />
+          <ImageCard src="/dummy.jpg" width={180} height={200} />
+          <ImageCard src="/dummy.jpg" width={180} height={200} />
+          <ImageCard src="/dummy.jpg" width={180} height={100} />
         </div>
 
         {/*SNSリンク*/}
