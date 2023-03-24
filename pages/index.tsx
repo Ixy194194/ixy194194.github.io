@@ -44,7 +44,7 @@ export default function Home() {
         </div>
 
         {/*SNSリンク*/}
-        <div className="absolute bottom-0 left-0 w-full h-20 bg-slate-50 z-10">
+        <div className="absolute bottom-0 left-0 w-full h-20 bg-white/10 backdrop-blur-md shadow-[inset_0_32px_32px_-32px_rgba(255,255,255,0.4)] shadow-white z-10">
           <div className="flex justify-center items-center h-full">
             <a
               href="https://twitter.com/Ixy"
