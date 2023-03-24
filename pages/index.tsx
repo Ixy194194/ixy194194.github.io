@@ -45,44 +45,27 @@ export default function Home() {
 
         {/*SNSリンク*/}
         <div className="absolute bottom-0 left-0 w-full h-20 bg-white/10 backdrop-blur-md shadow-[inset_0_32px_32px_-32px_rgba(255,255,255,0.4)] shadow-white z-10">
-          <div className="flex justify-center items-center h-full">
-            <a
-              href="https://twitter.com/Ixy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-4"
-            >
+          <div className="flex justify-center items-center h-full space-x-4">
+            <a href="https://twitter.com/Ixy" target="_blank" rel="noopener noreferrer">
               Twitter
             </a>
             <a
               href="https://www.instagram.com/ixy__194/?hl=ja"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-4"
             >
               Instagram
             </a>
-            <a
-              href="https://www.youtube.com/@ixy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-4"
-            >
+            <a href="https://www.youtube.com/@ixy" target="_blank" rel="noopener noreferrer">
               YouTube
             </a>
-            <a
-              href="https://ixy.fanbox.cc/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-4"
-            >
+            <a href="https://ixy.fanbox.cc/" target="_blank" rel="noopener noreferrer">
               fanbox
             </a>
             <a
               href="https://ci-en.dlsite.com/creator/5868"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-4"
             >
               Ci-en
             </a>
