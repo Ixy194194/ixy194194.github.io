@@ -1,7 +1,5 @@
 import Head from 'next/head';
-import { Inter } from '@next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+import ImageCard from '../components/ImageCard';
 
 export default function Home() {
   return (
@@ -11,11 +9,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="min-h-screen bg-slate-50">
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
+        <ImageCard src="/dummy.png" />
+        <ImageCard src="/dummy.png" />
+        <ImageCard src="/dummy.png" />
+        <ImageCard src="/dummy.png" />
+        <ImageCard src="/dummy.png" />
       </div>
     </>
   );
