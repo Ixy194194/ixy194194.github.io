@@ -14,7 +14,6 @@ const ImageCard: FC<ImageCardProps> = ({ width, height, src }) => {
       width={width}
       height={height}
       className="shadow-md rounded-xl object-cover"
-      style={{ height: `${height}px`, width: `${width}px` }}
       alt="TEST"
     />
   );

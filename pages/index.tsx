@@ -17,30 +17,36 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-12 z-10 opacity-25 max-h-screen overflow-hidden">
-          <ImageCard src="/001.jpg" width={180} height={300} />
-          <ImageCard src="/002.jpg" width={180} height={500} />
-          <ImageCard src="/003.jpg" width={180} height={300} />
-          <ImageCard src="/004.jpg" width={180} height={200} />
-          <ImageCard src="/005.jpg" width={180} height={300} />
-          <ImageCard src="/006.jpg" width={180} height={400} />
-          <ImageCard src="/007.jpg" width={180} height={300} />
-          <ImageCard src="/008.jpg" width={180} height={600} />
-          <ImageCard src="/009.jpg" width={180} height={300} />
-          <ImageCard src="/010.jpg" width={180} height={200} />
-          <ImageCard src="/011.jpg" width={180} height={200} />
-          <ImageCard src="/012.jpg" width={180} height={100} />
-          <ImageCard src="/001.jpg" width={180} height={300} />
-          <ImageCard src="/002.jpg" width={180} height={500} />
-          <ImageCard src="/003.jpg" width={180} height={300} />
-          <ImageCard src="/004.jpg" width={180} height={200} />
-          <ImageCard src="/005.jpg" width={180} height={300} />
-          <ImageCard src="/006.jpg" width={180} height={400} />
-          <ImageCard src="/007.jpg" width={180} height={300} />
-          <ImageCard src="/008.jpg" width={180} height={600} />
-          <ImageCard src="/009.jpg" width={180} height={300} />
-          <ImageCard src="/010.jpg" width={180} height={200} />
-          <ImageCard src="/011.jpg" width={180} height={200} />
-          <ImageCard src="/012.jpg" width={180} height={100} />
+          <ImageCard src="/001.jpg" width={180} height={180} />
+          <ImageCard src="/002.jpg" width={180} height={180} />
+          <ImageCard src="/003.jpg" width={180} height={180} />
+          <ImageCard src="/004.jpg" width={180} height={180} />
+          <ImageCard src="/005.jpg" width={180} height={180} />
+          <ImageCard src="/006.jpg" width={180} height={180} />
+          <ImageCard src="/007.jpg" width={180} height={180} />
+          <ImageCard src="/008.jpg" width={180} height={180} />
+          <ImageCard src="/009.jpg" width={180} height={180} />
+          <ImageCard src="/010.jpg" width={180} height={180} />
+          <ImageCard src="/011.jpg" width={180} height={180} />
+          <ImageCard src="/012.jpg" width={180} height={180} />
+          <ImageCard src="/001.jpg" width={180} height={180} />
+          <ImageCard src="/002.jpg" width={180} height={180} />
+          <ImageCard src="/003.jpg" width={180} height={180} />
+          <ImageCard src="/004.jpg" width={180} height={180} />
+          <ImageCard src="/005.jpg" width={180} height={180} />
+          <ImageCard src="/006.jpg" width={180} height={180} />
+          <ImageCard src="/007.jpg" width={180} height={180} />
+          <ImageCard src="/008.jpg" width={180} height={180} />
+          <ImageCard src="/009.jpg" width={180} height={180} />
+          <ImageCard src="/010.jpg" width={180} height={180} />
+          <ImageCard src="/011.jpg" width={180} height={180} />
+          <ImageCard src="/012.jpg" width={180} height={180} />
+          <ImageCard src="/007.jpg" width={180} height={180} />
+          <ImageCard src="/008.jpg" width={180} height={180} />
+          <ImageCard src="/009.jpg" width={180} height={180} />
+          <ImageCard src="/010.jpg" width={180} height={180} />
+          <ImageCard src="/011.jpg" width={180} height={180} />
+          <ImageCard src="/012.jpg" width={180} height={180} />
         </div>
 
         {/*SNSリンク*/}
