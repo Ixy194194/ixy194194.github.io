@@ -4,9 +4,18 @@
         <meta charset="utf-8">
         <title>Ixy</title>
     </head>
+    <style>
+        .marquee {
+            animation: marquee-anim 10s linear infinite;
+        }
+        @keyframes marquee-anim {
+	        0%   { transform: translate(100%, 0); }
+	        100% { transform: translate(-10%, 0); }
+        }
+    </style>
     <body>
     <header></header>
-    <h1>about Ixy</h1>
+    <h1 style="font-size: 1000%;" class="marquee">about Ixy</h1>
     <h2>各種SNS</h2>
     <ul>
         <li>Twitter: <a href="https://twitter.com/Ixy">@Ixy</a></li>
