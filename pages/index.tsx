@@ -12,7 +12,8 @@ export default function Home() {
         <div className="absolute flex justify-center items-center w-screen h-screen text-8xl font-bold text-slate-500 z-10">
           Ｉｘｙ（いくしー）
         </div>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-12 z-10">
+
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-12 z-10 opacity-25">
           <ImageCard src="/dummy.jpg" width={180} height={300} />
           <ImageCard src="/dummy.jpg" width={180} height={500} />
           <ImageCard src="/dummy.jpg" width={180} height={300} />
