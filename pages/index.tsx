@@ -1,6 +1,21 @@
 import Head from 'next/head';
 import ImageCard from '../components/ImageCard';
 
+const images = [
+  '/001.jpg',
+  '/002.jpg',
+  '/003.jpg',
+  '/004.jpg',
+  '/005.jpg',
+  '/006.jpg',
+  '/007.jpg',
+  '/008.jpg',
+  '/009.jpg',
+  '/010.jpg',
+  '/011.jpg',
+  '/012.jpg',
+];
+
 export default function Home() {
   return (
     <>
@@ -17,36 +32,9 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-12 z-10 opacity-25 max-h-screen overflow-hidden">
-          <ImageCard src="/001.jpg" width={180} height={180} />
-          <ImageCard src="/002.jpg" width={180} height={180} />
-          <ImageCard src="/003.jpg" width={180} height={180} />
-          <ImageCard src="/004.jpg" width={180} height={180} />
-          <ImageCard src="/005.jpg" width={180} height={180} />
-          <ImageCard src="/006.jpg" width={180} height={180} />
-          <ImageCard src="/007.jpg" width={180} height={180} />
-          <ImageCard src="/008.jpg" width={180} height={180} />
-          <ImageCard src="/009.jpg" width={180} height={180} />
-          <ImageCard src="/010.jpg" width={180} height={180} />
-          <ImageCard src="/011.jpg" width={180} height={180} />
-          <ImageCard src="/012.jpg" width={180} height={180} />
-          <ImageCard src="/001.jpg" width={180} height={180} />
-          <ImageCard src="/002.jpg" width={180} height={180} />
-          <ImageCard src="/003.jpg" width={180} height={180} />
-          <ImageCard src="/004.jpg" width={180} height={180} />
-          <ImageCard src="/005.jpg" width={180} height={180} />
-          <ImageCard src="/006.jpg" width={180} height={180} />
-          <ImageCard src="/007.jpg" width={180} height={180} />
-          <ImageCard src="/008.jpg" width={180} height={180} />
-          <ImageCard src="/009.jpg" width={180} height={180} />
-          <ImageCard src="/010.jpg" width={180} height={180} />
-          <ImageCard src="/011.jpg" width={180} height={180} />
-          <ImageCard src="/012.jpg" width={180} height={180} />
-          <ImageCard src="/007.jpg" width={180} height={180} />
-          <ImageCard src="/008.jpg" width={180} height={180} />
-          <ImageCard src="/009.jpg" width={180} height={180} />
-          <ImageCard src="/010.jpg" width={180} height={180} />
-          <ImageCard src="/011.jpg" width={180} height={180} />
-          <ImageCard src="/012.jpg" width={180} height={180} />
+          {images.map((image, index) => (
+            <ImageCard src={image} width={180} height={180} key={index} />
+          ))}
         </div>
 
         {/*SNSリンク*/}
