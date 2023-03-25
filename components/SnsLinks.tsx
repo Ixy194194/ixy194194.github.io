@@ -10,7 +10,7 @@ const SnsLink: FC = () => {
     {url: "https://ci-en.dlsite.com/creator/5868", label: "Ci-en"},
   ]
   return (
-    <div className="absolute bottom-0 left-0 w-full h-20 bg-slate-50 z-10">
+    <div className=" sticky absolute bottom-0 left-0 w-full h-20 bg-slate-50 z-10">
       <div className="flex justify-center items-center h-full">
         {snsLinks.map((snslink) => <a key={snslink.url} href={snslink.url} target="_blank" rel="noopener noreferrer" className="ml-4">{snslink.label}</a>)}
       </div>
