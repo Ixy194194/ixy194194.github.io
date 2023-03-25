@@ -4,6 +4,7 @@ import {ImageCardProps} from "../../types/ImageCardProps"
 
 const ImageCard: FC<ImageCardProps> = ({ width, height, src }) => {
   return (
+    <div className='flex justify-center'>
     <Image
       src={src}
       width={width}
@@ -11,6 +12,7 @@ const ImageCard: FC<ImageCardProps> = ({ width, height, src }) => {
       className={`shadow-md rounded-xl object-cover w-[${width}px] h-[${height}px]`}
       alt="TEST"
     />
+    </div>
   );
 };
 
