@@ -18,7 +18,7 @@ const ImageBoard: FC = () => {
     {key: 11, src: "/012.jpg", width: 180, height: 100},
   ];
   return (
-    <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-12 z-10 opacity-25">
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-12 z-10 opacity-25 px-2 py-8">
       {imageCardProps.map((imageCardProp) => <ImageCard key={imageCardProp.key} src={imageCardProp.src} width={imageCardProp.width} height={imageCardProp.width} />)}
   </div>
   );
