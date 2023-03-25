@@ -1,14 +1,10 @@
 import Image from 'next/image';
 import { FC } from 'react';
-
-interface ImageCardProps {
-  src: string;
-  width: number;
-  height: number;
-}
+import {ImageCardProps} from "../../types/ImageCardProps"
 
 const ImageCard: FC<ImageCardProps> = ({ width, height, src }) => {
   return (
+    <div className='flex justify-center'>
     <Image
       src={src}
       width={width}
@@ -16,6 +12,7 @@ const ImageCard: FC<ImageCardProps> = ({ width, height, src }) => {
       className={`shadow-md rounded-xl object-cover w-[${width}px] h-[${height}px]`}
       alt="TEST"
     />
+    </div>
   );
 };
 
