@@ -24,7 +24,7 @@ const ImageBoard: FC = () => {
         <ImageCard key={imageCardProp.key}
                    src={imageCardProp.src}
                    width={imageCardProp.width}
-                   height={imageCardProp.width}
+                   height={imageCardProp.height}
         />
     ));
     const shuffleCards = useCallback(() => {
