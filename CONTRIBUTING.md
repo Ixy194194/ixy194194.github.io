@@ -1,6 +1,6 @@
 # コントリビュートの流れ
 
-開発は、[一般的な OSS コントリビューション](https://note.com/samurai_se/n/ncde3bb14066e#baa7135d-157b-4ad9-af57-f07013cb5e1e)と同じ流れで行います。
+開発は、[一般的な OSS コントリビューション](https://note.com/samurai_se/n/ncde3bb14066e?magazine_key=md5321f66534d)と同じ流れで行います。
 コントリビュートに際しての大まかな流れは以下の通りです。
 
 ## 1. このリポジトリをフォークします。
