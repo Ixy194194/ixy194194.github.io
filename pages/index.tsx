@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
 import ImageCard from '../components/ImageCard';
 
 const images = [
@@ -18,23 +17,6 @@ const images = [
 ];
 
 export default function Home() {
-  const [imageRows, setImageRows] = useState<string[][]>([[]]);
-
-  useEffect(() => {
-    const initialImageRows: string[][] = [[]];
-    images.forEach((image, index) => {
-      const currentRow = initialImageRows[initialImageRows.length - 1];
-      // 許容できる最大の横幅 + 余白
-      if (180 * (currentRow.length + 1) + 48 * currentRow.length > document.body.clientWidth) {
-        initialImageRows.push([image]);
-      } else {
-        currentRow.push(image);
-      }
-    });
-
-    setImageRows(initialImageRows);
-  }, []);
-
   return (
     <>
       <Head>
@@ -49,13 +31,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col space-y-12 z-10 opacity-25 max-h-screen w-max mx-auto overflow-hidden">
-          {imageRows.map((row, rowIndex) => (
-            <div className="flex space-x-12 w-max" key={rowIndex}>
-              {row.map((image, imageIndex) => (
-                <ImageCard src={image} width={180} height={180} key={imageIndex} />
-              ))}
-            </div>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-12 z-10 opacity-25 max-h-screen overflow-hidden">
+          {images.map((image, index) => (
+            <ImageCard src={image} width={180} height={180} key={index} />
           ))}
         </div>
 
