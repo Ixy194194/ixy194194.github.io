@@ -1,5 +1,4 @@
 export type SnsLink = {
-    url: string,
-    label: string
-}
-
+  url: string;
+  label: string;
+};
