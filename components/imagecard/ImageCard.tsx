@@ -1,6 +1,12 @@
 import Image from 'next/image';
 import { FC } from 'react';
-import { ImageCardProps } from '../../types/ImageCardProps';
+
+export interface ImageCardProps {
+  key: number;
+  src: string;
+  width: number;
+  height: number;
+}
 
 const ImageCard: FC<ImageCardProps> = ({ width, height, src }) => {
   return (

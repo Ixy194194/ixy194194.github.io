@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import ImageCard from './ImageCard';
-import { ImageCardProps } from '../../types/ImageCardProps';
+import { ImageCardProps } from './ImageCard';
 
 const ImageBoard: FC = () => {
   const imageCardProps: Array<ImageCardProps> = [
