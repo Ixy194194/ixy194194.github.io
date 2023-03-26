@@ -11,7 +11,7 @@ const SnsLink: FC<SnsLinkProps> = ({ href, children }) => {
 			href={href}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="dark:text-gray-100 px-2 py-1 rounded-md duration-100 ease-out hover:bg-gray-300 dark:hover:bg-zinc-700 active:scale-95"
+			className="dark:text-gray-100 px-2 py-1 rounded-md duration-100 ease-out hover:bg-white/10 active:scale-95"
 		>
 			{children}
 		</a>
