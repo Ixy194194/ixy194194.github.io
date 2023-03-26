@@ -11,6 +11,6 @@ describe("Profile", () => {
     test("Profile名(ひらがな)が表示されているか", () => {
         render(<Profile />);
         const text_ruby = screen.getByText("いくしー");
-        expect(text).toBeInTheDocument();
+        expect(text_ruby).toBeInTheDocument();
     });
 });
