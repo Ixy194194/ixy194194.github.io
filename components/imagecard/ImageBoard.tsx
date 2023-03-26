@@ -121,7 +121,7 @@ const ImageBoard: FC = () => {
                 <ImageLine key={i} lineArray={v} />
             ))}
         </div>
-    );;
+    );
 };
 
 export default ImageBoard;
