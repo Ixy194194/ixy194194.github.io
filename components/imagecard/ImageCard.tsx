@@ -4,7 +4,7 @@ import {ImageCardProps} from "../../types/ImageCardProps"
 
 const ImageCard: FC<ImageCardProps> = ({width, height, src}) => {
     return (
-        <div className='flex justify-center'>
+        <div className='flex min-w-[200px] justify-center'>
             <Image
                 src={src}
                 width={width}
