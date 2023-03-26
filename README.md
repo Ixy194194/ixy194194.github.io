@@ -1,5 +1,3 @@
-![](https://vistr.dev/badge?repo=Ixy194194.ixy194194.github.io&text=Visitors&corners=square)
-
 # イラストレーター ixy さんのウェブサイト
 
 このリポジトリはイラストレーター ixy さんのウェブサイトのソースコードです。Next.js を使用して作成されており、GitHub Pages でホストされています。
