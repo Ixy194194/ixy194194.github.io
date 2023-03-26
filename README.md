@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# イラストレーターixyさんのウェブサイト
 
-## Getting Started
+このリポジトリはイラストレーターixyさんのウェブサイトのソースコードです。Next.jsを使用して作成されており、GitHub Pagesでホストされています。
 
-First, run the development server:
+## 開発環境のセットアップ
 
-```bash
+1. このリポジトリをクローンします。
+```
+git clone https://github.com/yourusername/ixy-portfolio.git
+```
+2. リポジトリのディレクトリに移動し、依存関係をインストールします。
+```
+cd ixy-portfolio
+npm install
+```
+3. 開発サーバーを起動します。
+```
 npm run dev
 # or
 yarn dev
 ```
+ブラウザで`http://localhost:3000`にアクセスすると、ウェブサイトが表示されます。`pages/index.tsx`を編集すると、ページが自動で更新されます。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 使用技術
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- [Next.js](https://nextjs.org/) - Reactベースのフレームワークで、サーバーサイドレンダリングや静的サイト生成をサポートしています。
+- [TypeScript](https://www.typescriptlang.org/) - JavaScriptのスーパーセットで、静的型付けを提供しています。
+- [Tailwind CSS](https://tailwindcss.com/) - ユーティリティファーストのCSSフレームワークで、迅速なスタイリングを可能にしています。
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## ガイドラインと注意事項
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### 技術スタック
+- GitHub Pagesを使用すること。
+- 外部APIを叩かないこと。
+- JSフレームワークを使用する場合は、GatsbyやNext.jsなどの静的サイトジェネレーターを使用すること。
+- サイト内にJSが必要な場合は、軽量なライブラリを使用すること。
+- サイト内でフォームを使用する場合は、Formspreeなどのフォームハンドリングサービスを使用すること。
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### レイアウトとデザイン
+- サイトの配色やフォントなどのデザインは、ixyさんのイラスト作品と調和するように設計すること。
+- サイトのロゴやアイコンは、ixyさんが提供する素材を使用すること。
+- サイト内の画像は、必要に応じて適切に最適化すること。
 
-## Learn More
+#### SEO
+- サイトはSEOに最適化されていること。
+- サイト内のすべてのページには、メタタグが適切に設定されていること。
+- サイト内のすべての画像には、適切なalt属性が設定されていること。
+- サイト内のすべてのページには、XMLサイトマップが設定されていること。
 
-To learn more about Next.js, take a look at the following resources:
+### その他
+- サイトのコードは、適切にコメントアウトされていること。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## サポートとフィードバック
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+このプロジェクトに関する質問や提案がある場合は、GitHubのイシュー機能を使用して報告してください。コントリビューションも歓迎します。
 
-## Deploy on Vercel
+## ライセンス
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+このプロジェクトはMITライセンスの下で公開されています。

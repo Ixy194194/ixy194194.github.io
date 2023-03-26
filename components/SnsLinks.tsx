@@ -1,0 +1,25 @@
+import { FC } from 'react';
+import { SnsLink } from '../types/SnsLink';
+
+const SnsLink: FC = () => {
+  const snsLinks: Array<SnsLink> = [
+    { url: 'https://twitter.com/Ixy', label: 'Twitter' },
+    { url: 'https://www.instagram.com/ixy__194/?hl=ja', label: 'Instagram' },
+    { url: 'https://www.youtube.com/@ixy', label: 'YouTube' },
+    { url: 'https://ixy.fanbox.cc/', label: 'fanbox' },
+    { url: 'https://ci-en.dlsite.com/creator/5868', label: 'Ci-en' },
+  ];
+  return (
+    <div className="absolute bottom-0 left-0 w-full h-20 bg-white/10 backdrop-blur-md shadow-[inset_0_32px_32px_-32px_rgba(255,255,255,0.4)] shadow-white z-10">
+      <div className="flex justify-center items-center h-full space-x-4">
+        {snsLinks.map((snslink) => (
+          <a key={snslink.url} href={snslink.url} target="_blank" rel="noopener noreferrer">
+            {snslink.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default SnsLink;
