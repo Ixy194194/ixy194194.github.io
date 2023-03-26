@@ -5,7 +5,7 @@ import SnsLink from "../../components/SnsLinks";
 describe("SnsLink", () => {
     test("Twitterのリンクテキストが表示されているか", () => {
         render(<SnsLink />);
-        const aTag = screen.getByText("Twitterss");
+        const aTag = screen.getByText("Twitter");
         expect(aTag).toBeInTheDocument();
     }),
         test("TwitterのUrlが意図したものになっているかどうか", () => {
