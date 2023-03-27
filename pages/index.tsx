@@ -4,15 +4,24 @@ import SnsLink from '../components/SnsLinks';
 import Profile from '../components/profile/Profile';
 import CommonMeta from '../components/CommonMeta'
 
+
 export default function Home() {
     return (
         <>
             <CommonMeta></CommonMeta>
-            <div className="min-h-screen bg-slate-50 dark:bg-zinc-900">
-                <Profile></Profile>
-                <ImageBoard></ImageBoard>
-                <SnsLink></SnsLink>
+            <div id="splash">
+                <div id="splash_logo" className='justify-self-center'>
+                    <img src="/ixylogo.png" alt="ixy" className="fadeUp w-8/12"/>
+                </div>
             </div>
+
+            <main>
+                <div className="min-h-screen bg-slate-50 dark:bg-zinc-900 container">
+                    <Profile></Profile>
+                    <ImageBoard></ImageBoard>
+                    <SnsLink></SnsLink>
+                </div>
+            </main>
         </>
     );
 }
