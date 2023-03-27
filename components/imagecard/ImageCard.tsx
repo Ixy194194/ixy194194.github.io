@@ -1,10 +1,15 @@
 import Image from 'next/image';
-import {FC} from 'react';
-import {ImageCardProps} from "../../types/ImageCardProps"
+import { FC } from 'react';
+import { ImageCardProps } from "../../types/ImageCardProps";
+
+export const imageCardSize = {
+    width: 12.5,
+    height: 18.75
+};
 
 const ImageCard: FC<ImageCardProps> = ({width, height, src}) => {
     return (
-        <div className='flex min-w-[12.5rem] max-h-[18.75rem] justify-center'>
+        <div className={`flex w-[${imageCardSize.width}rem] h-[${imageCardSize.height}rem] justify-center`}>
             <Image
                 src={src}
                 width={width}
