@@ -1,6 +1,5 @@
 import {FC, useCallback, useLayoutEffect, useRef, useState} from 'react';
 import ImageCard from './ImageCard';
-import { ImageCardProps } from "../../types/ImageCardProps";
 import { ImageLineArray } from '../../types/ImageLineProps';
 import ImageLine from './ImageLine';
 import imageCardProps from './ImageCardProps';
@@ -95,7 +94,6 @@ const ImageBoard: FC = () => {
 
                 anime.set(lineElement, {
                     translateX: isReverse ? -(lineElement.offsetWidth - window.innerWidth) : 0,
-                    translateY: lineHeight * i
                 });
                 const lineAnim = anime({
                     targets: lineElement,
@@ -116,7 +114,7 @@ const ImageBoard: FC = () => {
     }, [cardLines, imageCards.length, shuffleCards, speedSecond]);
 
     return (
-        <div className="fixed w-full z-10">
+        <div className="fixed overflow-hidden flex flex-wrap z-10">
             {cardLines.map((v, i) => (
                 <ImageLine key={i} lineArray={v} />
             ))}
