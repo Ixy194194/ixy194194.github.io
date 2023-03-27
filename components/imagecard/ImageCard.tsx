@@ -9,7 +9,7 @@ export const imageCardSize = {
 
 const ImageCard: FC<ImageCardProps> = ({width, height, src}) => {
     return (
-        <div className={`flex w-[${imageCardSize.width}rem] h-[${imageCardSize.height}rem] justify-center`}>
+        <div className='flex w-[12.5rem] h-[18.75rem] justify-center'>
             <Image
                 src={src}
                 width={width}
