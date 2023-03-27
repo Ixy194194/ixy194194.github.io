@@ -8,6 +8,7 @@ const SnsLink: FC = () => {
         {url: "https://www.youtube.com/@ixy", label: "YouTube"},
         {url: "https://ixy.fanbox.cc/", label: "fanbox"},
         {url: "https://ci-en.dlsite.com/creator/5868", label: "Ci-en"},
+        {url: "https://note.com/ixy_194", label: "note"},
     ]
     return (
         <div className="fixed bottom-0 left-0 w-full h-20 bg-slate-200 z-10 dark:bg-zinc-800">
