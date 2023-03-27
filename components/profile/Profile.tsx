@@ -17,9 +17,9 @@ const Profile: FC = () => {
                   Ｉｘｙ
                 </span>
                 <div className="grid grid-cols-3 items-center justify-center mt-3">
-                  <hr width="100%" className="border-slate-400 dark:border-gray-400"/>
+                  <hr className="w-full border-slate-400 dark:border-gray-400"/>
                   <span className="mx-3 text-xl text-slate-500 dark:text-gray-300">いくしー</span>
-                  <hr width="100%" className="border-slate-400 dark:border-gray-400"/>
+                  <hr className="w-full border-slate-400 dark:border-gray-400"/>
                 </div>
               </div>
            </div>
