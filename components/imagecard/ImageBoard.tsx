@@ -1,15 +1,16 @@
-import { FC, useCallback, useLayoutEffect, useRef, useState } from 'react';
-import ImageCard, { imageCardSize } from './ImageCard';
-import { ImageLineArray } from '../../types/ImageLineProps';
-import ImageLine, { imageLinePaddingSize } from './ImageLine';
-import imageCardProps from './ImageCardProps';
+import { FC, useCallback, useLayoutEffect, useRef, useState } from "react";
+import ImageCard, { imageCardSize } from "./ImageCard";
+import { ImageLineArray } from "../../types/ImageLineProps";
+import ImageLine, { imageLinePaddingSize } from "./ImageLine";
+import imageList from "./ImageList";
 
 const ImageBoard: FC = () => {
-    const imageCards = imageCardProps.map((imageCardProp) => (
-        <ImageCard key={imageCardProp.key}
-                   src={imageCardProp.src}
-                   width={imageCardProp.width}
-                   height={imageCardProp.height}
+    const imageCards = imageList.map((imageCardProp) => (
+        <ImageCard
+            key={imageCardProp.key}
+            src={imageCardProp.src}
+            width={imageCardProp.width}
+            height={imageCardProp.height}
         />
     ));
     const shuffleCards = useCallback(() => {
@@ -104,7 +105,7 @@ const ImageBoard: FC = () => {
                     translateX: isReverse ? -moveWidth + window.innerWidth : -moveWidth,
                     autoplay: true,
                     duration: ((speedSecond * 1000) / window.innerWidth) * moveWidth,
-                    easing: 'linear'
+                    easing: "linear",
                 });
 
                 if (i !== 0) continue;

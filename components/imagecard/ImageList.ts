@@ -1,6 +1,6 @@
-import { ImageCardProps } from "../../types/ImageCardProps";
+import { ImageCardProps } from "./ImageCard";
 
-const imageCardProps: Array<ImageCardProps> = [
+const imageList: Array<ImageCardProps> = [
     { key: 0, src: "/001.jpg", width: 180, height: 300 },
     { key: 1, src: "/002.jpg", width: 180, height: 500 },
     { key: 2, src: "/003.jpg", width: 180, height: 300 },
@@ -15,4 +15,4 @@ const imageCardProps: Array<ImageCardProps> = [
     { key: 11, src: "/012.jpg", width: 180, height: 100 },
 ];
 
-export default imageCardProps;
+export default imageList;
