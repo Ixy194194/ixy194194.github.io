@@ -3,9 +3,18 @@ import ImageBoard from '../components/imagecard/ImageBoard';
 import SnsLink from '../components/SnsLinks';
 import Profile from '../components/profile/Profile';
 import CommonMeta from '../components/CommonMeta'
+import { useEffect } from "react";
+import jQuery from "jquery"
 
 
 export default function Home() {
+    useEffect(() => {
+        jQuery(globalThis.window).on('load', function() {
+            jQuery("#splash_logo").delay(1200).fadeOut('slow');
+            jQuery("#splash").delay(1500).fadeOut('slow');
+        });
+    },[]);
+    
     return (
         <>
             <CommonMeta></CommonMeta>
