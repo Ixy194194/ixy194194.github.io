@@ -2,7 +2,7 @@ import Head from 'next/head';
 import ImageBoard from '../components/imagecard/ImageBoard';
 import SnsLink from '../components/SnsLinks';
 import Profile from '../components/profile/Profile';
-import CommonMeta from '../components/CommonMeta'
+import CommonMeta from '../components/CommonMeta';
 import { useEffect } from "react";
 import jQuery from "jquery"
 
