@@ -12,10 +12,17 @@ const Profile: FC = () => {
                     className="rounded-full mb-8"
                     alt="illustration"
                 />
+              <div className="flex justify-center flex-col items-center">
                 <span className="dark:text-gray-300">
-                  Ｉｘｙ（いくしー）
+                  Ｉｘｙ
                 </span>
-            </div>
+                <div className="grid grid-cols-3 items-center justify-center mt-3">
+                  <hr className="w-full border-slate-400 dark:border-gray-400"/>
+                  <span className="mx-3 text-xl text-slate-500 dark:text-gray-300">いくしー</span>
+                  <hr className="w-full border-slate-400 dark:border-gray-400"/>
+                </div>
+              </div>
+           </div>
         </>
     );
 };
