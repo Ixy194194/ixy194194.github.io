@@ -1,10 +1,12 @@
 import '@testing-library/jest-dom';
 import { readdir } from 'fs/promises';
-import imageCardProps from '../../../components/imagecard/ImageCardProps';
+import imageList from '../../../components/imagecard/ImageList';
 
-describe('imageCardProps', () => {
+describe('ImageList', () => {
 	test('画像定義にない名前が含まれていないか', async () => {
-		const dir = await readdir(__dirname + '/../../../public', { withFileTypes: true });
+		const dir = await readdir(__dirname + '/../../../public', {
+			withFileTypes: true,
+		});
 		const files = dir
 			.filter((de) => {
 				if (!de.isFile()) return false;
@@ -12,6 +14,6 @@ describe('imageCardProps', () => {
 			})
 			.map((de) => `/${de.name}`);
 
-		expect(files).toEqual(expect.arrayContaining(imageCardProps.map((v) => v.src)));
+		expect(files).toEqual(expect.arrayContaining(imageList.map((v) => v.src)));
 	});
 });

@@ -5,16 +5,23 @@ import ImageBoard from '../../../components/imagecard/ImageBoard';
 describe('ImageBoard', () => {
 	test('一定の高さになった時に列が追加されるか', async () => {
 		const originalEventFunc = window.addEventListener;
-		const spy = jest.spyOn(window, 'addEventListener');
+		const eventSpy = jest.spyOn(window, 'addEventListener');
 
 		let addedResizeEvent = false;
-		spy.mockImplementation((...args) => {
+		eventSpy.mockImplementation((...args) => {
 			originalEventFunc(...args);
 
 			const [type] = args;
 			if (type === 'resize') {
 				addedResizeEvent = true;
 			}
+		});
+
+		const getStyleSpy = jest.spyOn(window, 'getComputedStyle');
+		getStyleSpy.mockImplementation(() => {
+			const r = new CSSStyleDeclaration();
+			r.fontSize = '16px';
+			return r;
 		});
 
 		const { container } = render(<ImageBoard />);

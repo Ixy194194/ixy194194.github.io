@@ -1,11 +1,11 @@
 import { FC, useCallback, useLayoutEffect, useRef, useState } from 'react';
-import ImageCard from './ImageCard';
+import ImageCard, { imageCardSize } from './ImageCard';
 import { ImageLineArray } from '../../types/ImageLineProps';
-import ImageLine from './ImageLine';
-import imageCardProps from './ImageCardProps';
+import ImageLine, { imageLinePaddingSize } from './ImageLine';
+import imageList from './ImageList';
 
 const ImageBoard: FC = () => {
-	const imageCards = imageCardProps.map((imageCardProp) => (
+	const imageCards = imageList.map((imageCardProp) => (
 		<ImageCard
 			key={imageCardProp.key}
 			src={imageCardProp.src}
@@ -29,25 +29,29 @@ const ImageBoard: FC = () => {
 	type cardLineArray = Array<ImageLineArray>;
 	const [cardLines, setCardLines] = useState<cardLineArray>([]);
 	const lineAnimClassName = 'image-line-anim';
-
 	const speedSecond = 30;
-	const lineHeight = 374;
 
-	const initLine = useCallback(
-		(lineCount: number) => {
-			if (lineCount > cardLines.length) {
-				const pushArray: cardLineArray = [];
+	const getRootFontSize = () => parseFloat(getComputedStyle(document.documentElement).fontSize);
 
-				for (let i = cardLines.length; i < lineCount; i++)
-					pushArray.push([shuffleCards(), shuffleCards()]);
+	const initLine = useCallback(() => {
+		const lineCount = Math.ceil(
+			window.innerHeight /
+				((imageLinePaddingSize.y / 2 + imageCardSize.height) * getRootFontSize()),
+		);
 
-				setCardLines([...cardLines, ...pushArray]);
-			} else if (lineCount < cardLines.length) {
-				setCardLines(cardLines.filter((v, i) => i < lineCount));
-			}
-		},
-		[cardLines, shuffleCards],
-	);
+		if (lineCount > cardLines.length) {
+			const pushArray: cardLineArray = [];
+
+			for (let i = cardLines.length; i < lineCount; i++)
+				pushArray.push([shuffleCards(), shuffleCards()]);
+
+			setCardLines([...cardLines, ...pushArray]);
+		} else if (lineCount < cardLines.length) {
+			setCardLines(cardLines.filter((v, i) => i < lineCount));
+		} else {
+			setCardLines([...cardLines]);
+		}
+	}, [cardLines, shuffleCards]);
 
 	const refOnceExecutedInit = useRef(true);
 	useLayoutEffect(() => {
@@ -56,14 +60,10 @@ const ImageBoard: FC = () => {
 			return;
 		}
 
-		const getlineCount = () => {
-			return Math.ceil(window.innerHeight / lineHeight);
-		};
-
-		initLine(getlineCount());
+		initLine();
 
 		const resizeEvent = () => {
-			initLine(getlineCount());
+			initLine();
 		};
 
 		window.addEventListener('resize', resizeEvent);
@@ -92,12 +92,11 @@ const ImageBoard: FC = () => {
 				const isReverse = (i + 1) % 2 === 0;
 				const moveWidth =
 					lineElement.offsetWidth / 2 +
-					(3 * parseFloat(getComputedStyle(document.documentElement).fontSize)) / 4 -
-					15;
+					((imageLinePaddingSize.x / 2) * getRootFontSize()) / 4 -
+					12.5;
 
 				anime.set(lineElement, {
 					translateX: isReverse ? -(lineElement.offsetWidth - window.innerWidth) : 0,
-					translateY: lineHeight * i,
 				});
 				const lineAnim = anime({
 					targets: lineElement,
@@ -117,10 +116,10 @@ const ImageBoard: FC = () => {
 				});
 			}
 		})();
-	}, [cardLines, imageCards.length, shuffleCards, speedSecond]);
+	}, [cardLines, imageCards.length, shuffleCards]);
 
 	return (
-		<div className="fixed w-full z-10">
+		<div className="fixed overflow-hidden flex flex-wrap z-10">
 			{cardLines.map((v, i) => (
 				<ImageLine key={i} lineArray={v} />
 			))}

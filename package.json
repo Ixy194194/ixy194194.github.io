@@ -8,7 +8,7 @@
 		"start": "next start",
 		"lint": "next lint",
 		"lint:fix": "next lint --fix",
-		"format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
+		"format": "prettier --write --ignore-path .gitignore \"./**/*.{js,jsx,ts,tsx,json}\"",
 		"test": "jest --watch",
 		"test:ci": "jest"
 	},

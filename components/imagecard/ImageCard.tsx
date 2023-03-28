@@ -8,14 +8,19 @@ export interface ImageCardProps {
 	height: number;
 }
 
+export const imageCardSize = {
+	width: 12.5,
+	height: 18.75,
+};
+
 const ImageCard: FC<ImageCardProps> = ({ width, height, src }) => {
 	return (
-		<div className="flex min-w-[200px] justify-center">
+		<div className="flex w-[12.5rem] h-[18.75rem] justify-center">
 			<Image
 				src={src}
 				width={width}
 				height={height}
-				className={`shadow-md rounded-xl object-cover w-[${width}px] h-[${height}px]`}
+				className={`shadow-md rounded-xl object-cover w-full h-full`}
 				alt="illustration"
 			/>
 		</div>
