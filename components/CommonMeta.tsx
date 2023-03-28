@@ -20,11 +20,11 @@ const CommonMeta: FC = () => {
 			<meta property="og:type" content={type} />
 			<meta property="og:image" content={imageUrl} />
             <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-      <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-      <link href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css" rel="stylesheet" />
-      <link href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/4-1-4/css/4-1-4.css" rel="stylesheet"/>
-    </Head>
-  );
+			<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+			<link href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css" rel="stylesheet" />
+			<link href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/4-1-4/css/4-1-4.css" rel="stylesheet"/>
+    	</Head>
+  	);
 };
 
 export default CommonMeta;

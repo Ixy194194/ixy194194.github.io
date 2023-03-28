@@ -3,26 +3,35 @@ import ImageBoard from '../components/imagecard/ImageBoard';
 import SnsLink from '../components/SnsLinks';
 import Profile from '../components/profile/Profile';
 import CommonMeta from '../components/CommonMeta';
-import { useEffect } from "react";
-import jQuery from "jquery"
+import { useEffect,useState } from "react";
 
 
 export default function Home() {
+    const [showSplash, setShowSplash] = useState(true);
     useEffect(() => {
-        jQuery(globalThis.window).on('load', function() {
-            jQuery("#splash_logo").delay(1200).fadeOut('slow');
-            jQuery("#splash").delay(1500).fadeOut('slow');
-        });
-    },[]);
+        const timer = setTimeout(() => {
+          setShowSplash(false);
+        }, 2700);
+    
+        return () => {
+          clearTimeout(timer);
+        };
+      }, []);
     
     return (
         <>
             <CommonMeta></CommonMeta>
-            <div id="splash">
-                <div id="splash_logo" className='justify-self-center'>
-                    <img src="/ixylogo.png" alt="ixy" className="fadeUp w-8/12"/>
+            {showSplash && (
+                <div
+                id="splash"
+                className="fixed w-full h-full bg-white flex justify-center items-center top-0 left-0 z-50"
+                style={{ transition: 'opacity 1s ease-out', opacity: showSplash ? 1 : 0 }}
+                >
+                <div id="splash_logo" className="justify-self-center">
+                    <img src="/ixylogo.png" alt="ixy" className="fadeUp w-8/12" />
                 </div>
-            </div>
+                </div>
+            )}
 
             <main>
                 <div className="min-h-screen bg-slate-50 dark:bg-zinc-900 container">

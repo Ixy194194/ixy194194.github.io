@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const urlPrefix = process.env.URL_PREFIX ? '/' + process.env.URL_PREFIX : ''
-const webpack = require('webpack');
 
 const nextConfig = {
 	reactStrictMode: true,
@@ -13,12 +12,6 @@ const nextConfig = {
 	images: {
 		unoptimized: true,
 	},
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
-    })
-  ],
 };
 
 module.exports = nextConfig;
