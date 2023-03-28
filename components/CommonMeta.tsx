@@ -19,7 +19,10 @@ const CommonMeta: FC = () => {
 			<meta property="og:site_name" content={title} />
 			<meta property="og:type" content={type} />
 			<meta property="og:image" content={imageUrl} />
-		</Head>
-	);
+            <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+			<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    	</Head>
+  	);
 };
+
 export default CommonMeta;
