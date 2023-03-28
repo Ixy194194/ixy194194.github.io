@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 import { ImageLineProps } from '../../types/ImageLineProps';
 
 export const imageLinePaddingSize = {
