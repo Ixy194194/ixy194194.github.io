@@ -6,7 +6,7 @@ const CommonMeta: FC = () => {
 	const description = 'いくしーのWebサイト';
 	const url = 'https://ixy194194.github.io/';
 	const type = 'website';
-	const imageUrl = 'https://ixy194194.github.io/site_sumnail.jpg';
+	const imageUrl = 'https://ixy194194.github.io/site_thumbnail.jpg';
 	return (
 		<Head>
 			<title>{title}</title>
