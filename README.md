@@ -1,3 +1,5 @@
+[![UnitTest](https://github.com/Ixy194194/ixy194194.github.io/actions/workflows/unittest.yaml/badge.svg?branch=main)](https://github.com/Ixy194194/ixy194194.github.io/actions/workflows/unittest.yaml)
+
 # イラストレーター ixy さんのウェブサイト
 
 このリポジトリはイラストレーター ixy さんのウェブサイトのソースコードです。Next.js を使用して作成されており、GitHub Pages でホストされています。
