@@ -11,6 +11,24 @@ const nextConfig = {
 	},
 	images: {
 		unoptimized: true,
+		disableStaticImages: true,
+	},
+	webpack: (config) => {
+		config.module.rules.push({
+			test: /\.svg$/,
+			issuer: {
+				and: [/\.(js|ts)x?$/]
+			},
+			use: [
+				{
+					loader: "@svgr/webpack",
+					options: {
+						svgo: false,
+					},
+				},
+			],
+		});
+		return config;
 	},
 };
 
