@@ -27,6 +27,7 @@
 		"typescript": "5.0.2"
 	},
 	"devDependencies": {
+		"@svgr/webpack": "^7.0.0",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^14.0.0",
 		"@types/jest": "^29.5.0",
