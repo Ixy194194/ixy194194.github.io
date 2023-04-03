@@ -17,20 +17,20 @@ git clone https://github.com/<あなたのユーザー名>/ixy-portfolio.git
 
 ## 3. 本家リポジトリの URL を Upstream として登録します。
 
-```
+```sh
 git remote add upstream https://github.com/Ixy194194/ixy194194.github.io.git
 ```
 
 ## 4. リポジトリのディレクトリに移動し、依存関係をインストールします。
 
-```
-cd ixy-portfolio
+```sh
+cd ixy194194.github.io
 npm install
 ```
 
 ## 5. 開発サーバーを起動します。
 
-```
+```sh
 npm run dev
 # or
 yarn dev
@@ -66,14 +66,14 @@ git branch <任意の名前(基本的にはissue番号)>
 テストコードはプルリクを出した場合にも実行されます。
 **そこでエラーがでないようにしてください。**
 
-```
+```sh
 npm run test
-または
+# or
 npm run test:ci
 ```
 
-npm run test を実行した場合、ウォッチモードで実行されるためファイルを保存すると自動でユニットテストが実行されます。
-npm run test:ci を実行した場合、一度だけテストコードが実行されます。
+`npm run test` を実行した場合、ウォッチモードで実行されるためファイルを保存すると自動でユニットテストが実行されます。
+`npm run test:ci` を実行した場合、一度だけテストコードが実行されます。
 
 ## 9. プルリクを送る
 
@@ -85,7 +85,7 @@ issue を出していない場合、プルリクのタイトルは修正内容�
 
 オリジナルの dev への変更を自身のローカルの dev ブランチへ取り込み、自身のリモートリポジトリの dev ブランチへ反映させて、ソースを最新化します。
 
-```
+```sh
 git checkout dev
 git fetch upstream
 git merge upstream/dev --ff-only
