@@ -22,6 +22,7 @@ const ImageCard: FC<ImageCardProps> = ({ width, height, src }) => {
 				height={height}
 				className={`shadow-md rounded-xl object-cover w-full h-full`}
 				alt="illustration"
+				loading="lazy"
 			/>
 		</div>
 	);
