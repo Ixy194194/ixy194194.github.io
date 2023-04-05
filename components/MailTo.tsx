@@ -16,9 +16,7 @@ const MailTo: FC = () => {
 			<div className="bottom-0 left-0 w-full h-15 z-10 dark:bg-zinc-800 bg-white/30 backdrop-blur-lg border-t ">
 				<div className="flex justify-center items-center dark:text-gray-100">連絡先は下記</div>
 				<div className="flex justify-center items-center">
-					<Link href="mailto:ixyinfo333@gmail.com">
-						<MailToImage width={160} height={50} fill={getIconFill()} />
-					</Link>
+					<MailToImage width={160} height={50} fill={getIconFill()} />
 				</div>
 			</div>
 		</div>
