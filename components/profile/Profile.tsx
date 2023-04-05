@@ -9,7 +9,7 @@ const Profile: FC = () => {
 					src="/icon.jpeg"
 					width={150}
 					height={150}
-					className="rounded-full mb-8"
+					className="rounded-full mb-8 shadow-md"
 					alt="illustration"
 				/>
 				<div className="flex justify-center flex-col items-center">
