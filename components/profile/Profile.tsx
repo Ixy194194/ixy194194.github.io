@@ -4,21 +4,17 @@ import Image from 'next/image';
 const Profile: FC = () => {
 	return (
 		<>
-			<div className="fixed flex flex-wrap flex-col justify-center items-center w-full h-screen text-5xl lg:text-7xl font-bold text-slate-500 z-20">
+			<div className="flex flex-wrap items-center justify-center md:flex-row flex-col lg:text-7xl font-bold text-slate-500">
 				<Image
 					src="/icon.jpeg"
-					width={150}
-					height={150}
-					className="rounded-full mb-8"
+					width={120}
+					height={120}
+					className="rounded-full md:mb-0 mb-3 md:mr-5 h-max"
 					alt="illustration"
 				/>
-				<div className="flex justify-center flex-col items-center">
-					<span className="dark:text-gray-300">Ｉｘｙ</span>
-					<div className="grid grid-cols-3 items-center justify-center mt-3">
-						<hr className="w-full border-slate-400 dark:border-gray-400" />
-						<span className="mx-3 text-xl text-slate-500 dark:text-gray-300">いくしー</span>
-						<hr className="w-full border-slate-400 dark:border-gray-400" />
-					</div>
+				<div className="flex justify-center items-center md:items-start flex-col">
+					<span className="dark:text-gray-300 font-extrabold text-6xl lg:text-8xl md:drop-shadow-none drop-shadow-lg">Ｉｘｙ</span>
+					<span className="mt-3 items-center w-fit text-xl text-slate-500 dark:text-gray-300 md:ml-6 md:drop-shadow-none drop-shadow-lg">いくしー</span>
 				</div>
 			</div>
 		</>
