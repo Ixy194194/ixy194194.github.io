@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import ImageBoard from '../components/imagecard/ImageBoard';
 import SnsLink from '../components/SnsLinks';
-import Mailto from '../components/MailTo';
 import Profile from '../components/profile/Profile';
 import CommonMeta from '../components/CommonMeta';
 import { useState } from 'react';
@@ -21,7 +20,6 @@ export default function Home() {
         </div>
 				<ImageBoard></ImageBoard>
 				<SnsLink setmodalstate={setModalState}></SnsLink>
-				<Mailto></Mailto>
 			</div>
 		</>
 	);
