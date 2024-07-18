@@ -134,16 +134,37 @@ section h2 {
 .nav {
   z-index: 999999;
   position: absolute;
-  top: 0;
+  top: -64px;
   right: 0;
   background: #FFF;
   border-radius: 30px;
   margin: 30px 10px 0 0;
-  padding: 30px 50px;
+  padding: 0 50px;
   border: 2px solid #FC8EAC;
   text-align: left;
-  display: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 500ms ease-out;
 }
+.nav-transition-enter,
+.nav-transition-exit.nav-transition-exit-active {
+  max-height: 0;
+  padding: 0 50px;
+}
+
+.nav-transition-exit,
+.nav-transition-enter.nav-transition-enter-active,
+.nav-transition-enter-done {
+  max-height: 600px;
+  padding: 30px 50px;
+  top: 0;
+}
+
+.nav-transition-enter,
+.nav-transition-exit {
+  top: -64px;
+}
+
 
 #hamburger .open span {
   &:nth-of-type(1) {
@@ -366,15 +387,36 @@ section h2 {
   .nav {
     z-index: 9999;
     position: absolute;
-    top: 0;
+    top: -64px;
     right: 0;
     background: #FFF;
     border-radius: 30px;
     margin: 60px 30px 0 0;
-    padding: 50px 150px 50px 50px;
+    padding: 0 150px 0 50px;
     border: 2px solid #FC8EAC;
     text-align: left;
-    display: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: all 500ms ease-out;
+  }
+  
+  .nav-transition-enter,
+  .nav-transition-exit.nav-transition-exit-active {
+    max-height: 0;
+    padding: 0 150px 0 50px;
+  }
+  
+  .nav-transition-exit,
+  .nav-transition-enter.nav-transition-enter-active,
+  .nav-transition-enter-done {
+    max-height: 640px;
+    padding: 50px 150px 50px 50px;
+    top: 0;
+  }
+  
+  .nav-transition-enter,
+  .nav-transition-exit {
+    top: -64px;
   }
 
   .nav_img {
