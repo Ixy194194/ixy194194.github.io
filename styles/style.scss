@@ -856,6 +856,7 @@
 	display: flex;
 	overflow: hidden;
 	width: 100%;
+	min-width: fit-content;
 }
 .conveyer img {
 	width: 200px;
@@ -882,6 +883,7 @@
 		display: flex;
 		width: 100%;
 		margin-top: 40px;
+        min-width: fit-content;
 	}
 	.conveyer img {
 		width: 300px;
