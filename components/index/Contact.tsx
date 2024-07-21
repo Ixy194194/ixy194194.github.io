@@ -1,30 +1,47 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 
-const Contact:FC = () => {
-	return (
-		<div className="conveyer">
-			<a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer">
-				<div className="belt1">
-					<div><img src="/images/About/contact.png" alt="コンタクト" /></div>
-					<div><img src="/images/About/contact.png" alt="コンタクト" /></div>
-					<div><img src="/images/About/contact.png" alt="コンタクト" /></div>
-					<div><img src="/images/About/contact.png" alt="コンタクト" /></div>
-					<div><img src="/images/About/contact.png" alt="コンタクト" /></div>
-					<div><img src="/images/About/contact.png" alt="コンタクト" /></div>
-				</div>
-			</a>
-			<a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer">
-				<div className="belt2">
-					<div><img src="/images/About/contact.png" alt="コンタクト" /></div>
-					<div><img src="/images/About/contact.png" alt="コンタクト" /></div>
-					<div><img src="/images/About/contact.png" alt="コンタクト" /></div>
-					<div><img src="/images/About/contact.png" alt="コンタクト" /></div>
-					<div><img src="/images/About/contact.png" alt="コンタクト" /></div>
-					<div><img src="/images/About/contact.png" alt="コンタクト" /></div>
-				</div>
-			</a>
-		</div>
-	)
-}
+const Contact: FC = () => {
+  const [repeatCount, setRepeatCount] = useState(1);
+
+  useEffect(() => {
+    const updateRepeatCount = () => {
+      const width = window.innerWidth;
+      const count = Math.ceil(width / 200);
+      setRepeatCount(count);
+    };
+
+    updateRepeatCount();
+    window.addEventListener('resize', updateRepeatCount);
+
+    return () => {
+      window.removeEventListener('resize', updateRepeatCount);
+    };
+  }, []);
+
+  const renderImages = () => {
+    const images = [];
+    for (let i = 0; i < repeatCount; i++) {
+      images.push(
+        <div key={i}><img src="/images/About/contact.png" alt="コンタクト" /></div>
+      );
+    }
+    return images;
+  };
+
+  return (
+    <div className="conveyer">
+      <a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer">
+        <div className="belt1">
+          {renderImages()}
+        </div>
+      </a>
+      <a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer">
+        <div className="belt2">
+          {renderImages()}
+        </div>
+      </a>
+    </div>
+  );
+};
 
 export default Contact;

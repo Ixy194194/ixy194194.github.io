@@ -157,6 +157,12 @@ img {
   --blend-color-5:#af4949;
 }
 
+.section-top {
+  padding-top: 30px;
+  margin-top: -30px;
+  background-color: #fff;
+}
+
 .section-top .glitch__item {
   background: url("/images/TOP/TOP.jpg") no-repeat 50% (50% / cover);
   height: 100%;
@@ -558,9 +564,8 @@ img {
 .Illustrations_images {
   ul {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 100%;
+    min-width: 100%;
     height: auto;
   }
 
@@ -572,6 +577,7 @@ img {
 
     img {
       width: 100%;
+      min-width: 188px;
       max-width: 300px;
       height: auto;
       border-radius: 20px;
@@ -579,6 +585,44 @@ img {
       object-position: 50% 0%;
       transition: 1s all;
     }
+  }
+}
+
+.image_scroll_l {
+  overflow: hidden;
+  display: -webkit-box;
+
+  ul {
+    display: flex;
+    animation: scroll-left 20s linear infinite;
+  }
+}
+
+.image_scroll_r {
+  overflow: hidden;
+  display: -webkit-box;
+
+  ul {
+    display: flex;
+    animation: scroll-right 20s linear infinite;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
@@ -633,6 +677,11 @@ img {
 }
 
 @media (min-width: 960px) {
+  .section-top {
+    padding-top: 70px;
+    margin-top: -70px;
+  }
+
   .Illustrations {
     padding: 50px 0;
   }
@@ -1054,7 +1103,11 @@ img {
   display: flex;
   overflow: hidden;
   width: 100%;
-  min-width: fit-content;
+  margin-bottom: 3em;
+
+  a {
+    min-width: auto;
+  }
 
   img {
     width: 200px;
@@ -1064,7 +1117,7 @@ img {
 .belt1, .belt2 {
   display: inline-flex;
   flex: none;
-  animation: belt 30s 2s linear infinite;
+  animation: belt 60s linear infinite;
 }
 
 .conveyer:hover div {
@@ -1083,10 +1136,7 @@ img {
 
 @media (min-width: 960px) {
   .conveyer {
-    display: flex;
-    width: 100%;
     margin-top: 40px;
-    min-width: fit-content;
 
     img {
       width: 300px;
@@ -1099,6 +1149,7 @@ img {
     opacity: 0.7;
   }
 }
+
 
 iframe.youtube-16-9 {
   width: 85%;

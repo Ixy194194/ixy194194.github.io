@@ -23,23 +23,41 @@ const Illustrations: FC = () => {
 		<section className="Illustrations anchor" id="Illustrations">
 			<h2><span>Illustrations</span></h2>
 			<div className="Illustrations_images">
-				<ul className="image_container_left">
-					{leftColumn.map((image, index) => (
-						<li key={index}>
-							<img src={image.src} loading="lazy" className="lazyload" alt={image.alt} />
-						</li>
-					))}
-				</ul>
-				<ul className="image_container_rigth" dir="rtl">
-					{rightColumn.map((image, index) => (
-						<li key={index}>
-							<img src={image.src} loading="lazy" className="lazyload" alt={image.alt} />
-						</li>
-					))}
-				</ul>
+				<div className='image_scroll_l'>
+					<ul className="image_container_left">
+						{leftColumn.map((image, index) => (
+							<li key={index}>
+								<img src={image.src} loading="lazy" className="lazyload" alt={image.alt} />
+							</li>
+						))}
+					</ul>
+					<ul className="image_container_left">
+						{leftColumn.map((image, index) => (
+							<li key={index}>
+								<img src={image.src} loading="lazy" className="lazyload" alt={image.alt} />
+							</li>
+						))}
+					</ul>
+				</div>
+				<div className='image_scroll_r'>
+					<ul className="image_container_right">
+						{rightColumn.map((image, index) => (
+							<li key={index}>
+								<img src={image.src} loading="lazy" className="lazyload" alt={image.alt} />
+							</li>
+						))}
+					</ul>
+					<ul className="image_container_right">
+						{rightColumn.map((image, index) => (
+							<li key={index}>
+								<img src={image.src} loading="lazy" className="lazyload" alt={image.alt} />
+							</li>
+						))}
+					</ul>
+				</div>
 			</div>
 			<div className="button">
-				<a href="Illustrations/index.html">
+				<a href="illustrations">
 					<button className="btn-hover color-1">More</button>
 				</a>
 			</div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -24,13 +25,6 @@ const Footer = () => {
 		window.addEventListener('scroll', onScroll);
 		window.addEventListener('resize', handleResize);
 
-		// Stickyfill処理 (仮に StickyfillをReactで使用すると仮定して)
-		if (windowWidth >= 768) {
-			// Stickyfill.add(elements); // 仮に使用しているとする
-		} else {
-			// Stickyfill.remove(elements); // 仮に使用しているとする
-		}
-
 		return () => {
 			window.removeEventListener('scroll', onScroll);
 			window.removeEventListener('resize', handleResize);
@@ -44,14 +38,14 @@ const Footer = () => {
 				</div>
 				<div className="footer-container-text">
 					<ul>
-						<li><a href="illustrations/index.html">Illustrations</a></li>
-						<li><a href="#Games">Games</a></li>
-						<li><a href="#About">About</a></li>
-						<li><a href="Goods/index.html">Goods</a></li>
+						<li><Link href="/illustrations">Illustrations</Link></li>
+						<li><Link href="/#Games">Games</Link></li>
+						<li><Link href="/#About">About</Link></li>
+						<li><Link href="/goods">Goods</Link></li>
 						<li><a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer">Contact</a>
 						</li>
 					</ul>
-					<small>All Rights Reserved 2024&copy;Ixy</small>
+					<small>&copy; 2024 Ixy</small>
 				</div>
 			</div>
 			<div className={`top_button ${isScrolled ? 'active' : ''}`}

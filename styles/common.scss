@@ -65,17 +65,12 @@ section h2 {
   background-repeat: repeat;
   background-position: center center;
   background-size: clamp(40px, 3.33vw, 42px) clamp(40px, 3.33vw, 42px);
-  padding-bottom: 30px;
 }
 
 @media (min-width: 960px) {
   section h2 {
     font-size: 3.5rem;
     margin-bottom: 30px;
-  }
-
-  .grid-background {
-    padding-bottom: 50px;
   }
 }
 
@@ -101,6 +96,7 @@ section h2 {
   font-size: 1.6rem;
   padding: 0 30px;
   display: inline;
+  cursor: pointer;
 }
 
 #hamburger {
@@ -111,6 +107,7 @@ section h2 {
   z-index: 99999;
   right: 24px;
   top: 10px;
+  cursor: pointer;
 
   .icon span {
     position: absolute;
@@ -430,7 +427,6 @@ section h2 {
 }
 
 .footer {
-  height: 50px;
   position: relative;
   padding: 20px 0 0;
   font-family: "Orbitron-R";
@@ -463,10 +459,6 @@ section h2 {
 }
 
 @media (min-width: 560px) {
-  .footer {
-    height: 80px;
-  }
-
   .footer-container-image img {
     display: block;
   }

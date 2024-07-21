@@ -5,18 +5,16 @@ import Games from './Games';
 import About from './About';
 import Contact from './Contact';
 
-const Main: FC = () => {
+const Index: FC = () => {
 	return (
-		<main className="main">
+		<>
 			<Top />
-			<div className="grid-background">
-				<Illustrations />
-				<Games />
-				<About />
-				<Contact />
-			</div>
-		</main>
+			<Illustrations />
+			<Games />
+			<About />
+			<Contact />
+		</>
 	)
 }
 
-export default Main;
+export default Index;

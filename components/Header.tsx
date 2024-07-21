@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import Link from 'next/link';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,6 +18,12 @@ const Header = () => {
     const handleScroll = () => {
         if (typeof window !== 'undefined') {
             setIsScrolled(window.scrollY > 1000);
+            const logo = document.querySelector('.logo');
+            if (window.scrollY > 500) {
+                logo?.classList.add('active');
+            } else {
+                logo?.classList.remove('active');
+            }
         }
     };
 
@@ -42,7 +49,7 @@ const Header = () => {
     return (
         <header className="header">
             <div className="header-logo">
-                <a href="#"><img className="logo" src="/images/TOP/logo.png" alt="いくしーロゴ" /></a>
+                <Link href="/"><img className="logo" src="/images/TOP/logo.png" alt="いくしーロゴ" /></Link>
             </div>
             <div className="header-content-wrapper">
                 <p className="header__menu" onClick={handleHamburgerClick}>{isMenuOpen ? 'CLOSE' : 'MENU'}</p>
@@ -59,16 +66,19 @@ const Header = () => {
                 >
                     <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
                         <ul className="nav__list">
-                            <li className="nav__item"><a href="Illustrations/index.html" onClick={handleNavLinkClick}><span>I</span><span>l</span><span>l</span><span>u</span><span>s</span><span>t</span><span>r</span>a<span>t</span>i<span>o</span>n<span>s</span></a>
+                            <li className="nav__item">
+                                <Link href="/illustrations" onClick={handleNavLinkClick}>
+                                    <span>I</span><span>l</span><span>l</span><span>u</span><span>s</span><span>t</span><span>r</span>a<span>t</span>i<span>o</span>n<span>s</span>
+                                </Link>
                                 <p>イラスト</p>
                             </li>
-                            <li className="nav__item"><a href="#Games" onClick={handleNavLinkClick}><span>G</span><span>a</span><span>m</span><span>e</span><span>s</span></a>
+                            <li className="nav__item"><Link href="/#Games" onClick={handleNavLinkClick}><span>G</span><span>a</span><span>m</span><span>e</span><span>s</span></Link>
                                 <p>ゲーム</p>
                             </li>
-                            <li className="nav__item"><a href="#About" onClick={handleNavLinkClick}><span>A</span><span>b</span><span>o</span><span>u</span><span>t</span></a>
+                            <li className="nav__item"><Link href="/#About" onClick={handleNavLinkClick}><span>A</span><span>b</span><span>o</span><span>u</span><span>t</span></Link>
                                 <p>いくしーについて</p>
                             </li>
-                            <li className="nav__item"><a href="Goods/index.html" onClick={handleNavLinkClick}><span>G</span><span>o</span><span>o</span><span>d</span><span>s</span></a>
+                            <li className="nav__item"><Link href="goods" onClick={handleNavLinkClick}><span>G</span><span>o</span><span>o</span><span>d</span><span>s</span></Link>
                                 <p>グッズ</p>
                             </li>
                             <li className="nav__item"><a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer" onClick={handleNavLinkClick}><span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span></a>
