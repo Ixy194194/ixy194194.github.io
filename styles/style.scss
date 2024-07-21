@@ -12,6 +12,12 @@
   color: #fff;
 }
 
+img {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
 .fade-out {
   opacity: 0;
   visibility: hidden;
@@ -64,6 +70,16 @@
   visibility: hidden;
 }
 
+.illustrationsPage {
+  .logo {
+    width: 80px;
+    transition: inherit;
+    opacity: inherit;
+    visibility: inherit;
+    z-index: -99;
+  }
+}
+
 @media (min-width: 481px) and (max-width: 959px) {
   .section-top__image {
     width: 95vw;
@@ -104,6 +120,16 @@
 
   .logo {
     width: 120px;
+  }
+
+  .illustrationsPage {
+    .logo {
+      width: 120px;
+      transition: inherit;
+      opacity: inherit;
+      visibility: inherit;
+      z-index: -99;
+    }
   }
 }
 

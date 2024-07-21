@@ -1,0 +1,132 @@
+.filter-list-box {
+  text-align: center;
+}
+
+.filter-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  justify-content: center;
+  grid-gap: 0.5rem;
+
+  li {
+    text-align: center;
+    background: #FFF;
+    border: 2px solid #FC8EAC;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1.2rem;
+    padding: 0.5em 1.2em;
+  }
+}
+
+.filter-list__container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.filter-list li.is-active {
+  background: #FC8EAC;
+  color: #fff;
+}
+
+.filter-item {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+
+  &.fade-in {
+    opacity: 1;
+  }
+
+  li {
+    width: calc(50%);
+    height: auto;
+    display: flex;
+    margin: 20px 0;
+    overflow: hidden;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      max-height: 400px;
+      border-radius: 5%;
+      object-fit: cover;
+      object-position: 50% 0%;
+      padding: 0 10px;
+      cursor: pointer;
+
+      &:hover {
+        transform: rotate(2deg);
+        transition: 1s all;
+      }
+    }
+  }
+}
+
+#grayDisplay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100% !important;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+
+  &.visible {
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 90%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+
+
+@media (min-width: 560px) and (max-width: 959px) {
+  .filter-item li {
+    width: calc(33%);
+  }
+
+  #grayDisplay img {
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+@media (min-width: 960px) {
+  .filter-item li {
+    width: calc(25%);
+  }
+
+  .filter-list li {
+    padding: 10px;
+    border-radius: 30px;
+    margin: 0 0 0 5px;
+    transition: all 0.3s;
+    font-size: 1.6rem;
+  }
+
+  #grayDisplay img {
+    max-width: 400px;
+    height: auto;
+  }
+}
