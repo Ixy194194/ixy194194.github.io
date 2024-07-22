@@ -13,11 +13,11 @@ const Header = () => {
 
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 1000);
-    const logo = document.querySelector(".logo");
+    const logo = document.querySelector('.logo');
     if (window.scrollY > 500) {
-      logo?.classList.add("active");
+      logo?.classList.add('active');
     } else {
-      logo?.classList.remove("active");
+      logo?.classList.remove('active');
     }
   };
 
@@ -34,19 +34,24 @@ const Header = () => {
     };
   }, []);
 
-  const splitText = (text: string) => text.split('').map((char, index) => (
-    <span key={index} style={{ transitionDelay: `${index * 0.04}s` }}>
-      {char}
-    </span>
-  ));
+  const splitText = (text: string) =>
+    text.split('').map((char, index) => (
+      <span key={index} style={{ transitionDelay: `${index * 0.04}s` }}>
+        {char}
+      </span>
+    ));
 
   return (
     <header className={styles.header}>
       <div className="headerLogo">
-        <Link href="/"><img className="logo" src="/images/TOP/logo.png" alt="いくしーロゴ" /></Link>
+        <Link href="/">
+          <img className="logo" src="/images/TOP/logo.png" alt="いくしーロゴ" />
+        </Link>
       </div>
       <div className={styles.headerContentWrapper}>
-        <p className={styles.headerMenu} onClick={handleHamburgerClick}>{isMenuOpen ? 'CLOSE' : 'MENU'}</p>
+        <p className={styles.headerMenu} onClick={handleHamburgerClick}>
+          {isMenuOpen ? 'CLOSE' : 'MENU'}
+        </p>
         <div id={styles.hamburger} onClick={handleHamburgerClick}>
           <div className={`${styles.icon} ${isMenuOpen ? styles.open : ''}`}>
             <span></span>
@@ -56,12 +61,18 @@ const Header = () => {
         <CSSTransition in={isMenuOpen} timeout={500} classNames="nav-transition">
           <nav className={`nav ${isMenuOpen ? styles.open : ''}`}>
             <ul className={styles.navList}>
-              {['Illustrations', 'Games', 'About', 'Goods', 'Contact'].map((item, index) => (
+              {[
+                { name: 'Illustrations', link: '/illustrations' },
+                { name: 'Games', link: '/#games' },
+                { name: 'About', link: '/#about' },
+                { name: 'Goods', link: '/goods' },
+                { name: 'Contact', link: '/#contact' },
+              ].map((item, index) => (
                 <li key={index} className={styles.navItem}>
-                  <Link href={`/${item.toLowerCase()}`} onClick={handleNavLinkClick}>
-                    {splitText(item)}
+                  <Link href={`${item.link}`} onClick={handleNavLinkClick}>
+                    {splitText(item.name)}
                   </Link>
-                  <p>{item === 'Contact' ? 'お問い合わせ' : item}</p>
+                  <p>{item.name === '#contact' ? 'お問い合わせ' : item.name}</p>
                 </li>
               ))}
             </ul>
@@ -69,10 +80,26 @@ const Header = () => {
               <li>Follow Me!</li>
               {[
                 { href: 'https://x.com/Ixy', src: '/images/nav/X.jpg', alt: 'ツイッター' },
-                { href: 'https://www.instagram.com/ixy__194/?hl=ja', src: '/images/nav/instagram.jpg', alt: 'インスタグラム' },
-                { href: 'https://www.youtube.com/@ixy', src: '/images/nav/Youtube.jpg', alt: 'ユーチューブ' },
-                { href: 'https://ixy.fanbox.cc/', src: '/images/nav/FANBOX.jpg', alt: 'ファンボックス' },
-                { href: 'https://ci-en.dlsite.com/creator/5868', src: '/images/nav/Ci-en.jpg', alt: 'シエン' }
+                {
+                  href: 'https://www.instagram.com/ixy__194/?hl=ja',
+                  src: '/images/nav/instagram.jpg',
+                  alt: 'インスタグラム',
+                },
+                {
+                  href: 'https://www.youtube.com/@ixy',
+                  src: '/images/nav/Youtube.jpg',
+                  alt: 'ユーチューブ',
+                },
+                {
+                  href: 'https://ixy.fanbox.cc/',
+                  src: '/images/nav/FANBOX.jpg',
+                  alt: 'ファンボックス',
+                },
+                {
+                  href: 'https://ci-en.dlsite.com/creator/5868',
+                  src: '/images/nav/Ci-en.jpg',
+                  alt: 'シエン',
+                },
               ].map((sns, index) => (
                 <li key={index} className={styles.snsItem}>
                   <a target="_blank" href={sns.href}>

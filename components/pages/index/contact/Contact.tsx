@@ -23,23 +23,21 @@ const Contact: FC = () => {
     const images = [];
     for (let i = 0; i < repeatCount; i++) {
       images.push(
-        <div key={i}><img src="/images/About/contact.png" alt="コンタクト" /></div>
+        <div key={i}>
+          <img src="/images/About/contact.png" alt="コンタクト" />
+        </div>,
       );
     }
     return images;
   };
 
   return (
-    <div className={styles.conveyor}>
+    <div className={styles.conveyor} id="contact">
       <a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer">
-        <div className={styles.belt1}>
-          {renderImages()}
-        </div>
+        <div className={styles.belt1}>{renderImages()}</div>
       </a>
       <a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer">
-        <div className={styles.belt2}>
-          {renderImages()}
-        </div>
+        <div className={styles.belt2}>{renderImages()}</div>
       </a>
     </div>
   );

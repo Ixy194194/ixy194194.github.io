@@ -6,15 +6,15 @@ import About from './about/About';
 import Contact from './contact/Contact';
 
 const Index: FC = () => {
-	return (
-		<>
-			<Top />
-			<Illustrations />
-			<Games />
-			<About />
-			<Contact />
-		</>
-	)
-}
+  return (
+    <>
+      <Top />
+      <Illustrations />
+      <Games />
+      <About />
+      <Contact />
+    </>
+  );
+};
 
 export default Index;
