@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import styles from './Illustrations.module.scss';
 
 const Illustrations: FC = () => {
 	const images = [
@@ -14,24 +15,23 @@ const Illustrations: FC = () => {
 		{ src: '/images/Illustrations/image_10.webp', alt: 'イラスト' },
 	];
 
-	// split those images into two columns (1/2)
 	const half = Math.ceil(images.length / 2);
 	const leftColumn = images.slice(0, half);
 	const rightColumn = images.slice(half);
 
 	return (
-		<section className="Illustrations anchor" id="Illustrations">
+		<section className={`${styles.illustrations} anchor`} id="Illustrations">
 			<h2><span>Illustrations</span></h2>
-			<div className="Illustrations_images">
-				<div className='image_scroll_l'>
-					<ul className="image_container_left">
+			<div className={styles.illustrationsImages}>
+				<div className={styles.imageScrollL}>
+					<ul className={styles.imageContainerLeft}>
 						{leftColumn.map((image, index) => (
 							<li key={index}>
 								<img src={image.src} loading="lazy" className="lazyload" alt={image.alt} />
 							</li>
 						))}
 					</ul>
-					<ul className="image_container_left">
+					<ul className={styles.imageContainerLeft}>
 						{leftColumn.map((image, index) => (
 							<li key={index}>
 								<img src={image.src} loading="lazy" className="lazyload" alt={image.alt} />
@@ -39,15 +39,15 @@ const Illustrations: FC = () => {
 						))}
 					</ul>
 				</div>
-				<div className='image_scroll_r'>
-					<ul className="image_container_right">
+				<div className={styles.imageScrollR}>
+					<ul className={styles.imageContainerRight}>
 						{rightColumn.map((image, index) => (
 							<li key={index}>
 								<img src={image.src} loading="lazy" className="lazyload" alt={image.alt} />
 							</li>
 						))}
 					</ul>
-					<ul className="image_container_right">
+					<ul className={styles.imageContainerRight}>
 						{rightColumn.map((image, index) => (
 							<li key={index}>
 								<img src={image.src} loading="lazy" className="lazyload" alt={image.alt} />
@@ -56,9 +56,9 @@ const Illustrations: FC = () => {
 					</ul>
 				</div>
 			</div>
-			<div className="button">
+			<div className={styles.button}>
 				<a href="illustrations">
-					<button className="btn-hover color-1">More</button>
+					<button className={`${styles.btnHover} ${styles.color1}`}>More</button>
 				</a>
 			</div>
 		</section>

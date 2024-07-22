@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react';
+import styles from './Contact.module.scss';
 
 const Contact: FC = () => {
   const [repeatCount, setRepeatCount] = useState(1);
@@ -29,14 +30,14 @@ const Contact: FC = () => {
   };
 
   return (
-    <div className="conveyer">
+    <div className={styles.conveyor}>
       <a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer">
-        <div className="belt1">
+        <div className={styles.belt1}>
           {renderImages()}
         </div>
       </a>
       <a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer">
-        <div className="belt2">
+        <div className={styles.belt2}>
           {renderImages()}
         </div>
       </a>

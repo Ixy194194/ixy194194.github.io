@@ -1,0 +1,50 @@
+.conveyor {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 3em;
+
+  a {
+    min-width: auto;
+  }
+
+  img {
+    width: 200px;
+  }
+}
+
+.belt1, .belt2 {
+  display: inline-flex;
+  flex: none;
+  animation: belt 60s linear infinite;
+}
+
+.conveyor:hover div {
+  animation-play-state: paused !important;
+}
+
+@keyframes belt {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (min-width: 960px) {
+  .conveyor {
+    margin-top: 40px;
+
+    img {
+      width: 300px;
+    }
+  }
+
+  .belt1 div:hover, .belt2 div:hover {
+    transform: scale(1.1);
+    transition-duration: 0.3s;
+    opacity: 0.7;
+  }
+}

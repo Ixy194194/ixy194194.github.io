@@ -1,0 +1,136 @@
+.illustrations {
+  padding: 40px 0;
+}
+
+.illustrationsImages {
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 100%;
+    height: auto;
+  }
+
+  li {
+    width: calc(25%);
+    height: auto;
+    display: flex;
+    padding: 10px;
+
+    img {
+      width: 100%;
+      min-width: 188px;
+      max-width: 300px;
+      height: auto;
+      border-radius: 20px;
+      object-fit: cover;
+      object-position: 50% 0%;
+      transition: 1s all;
+    }
+  }
+}
+
+.imageScrollL {
+  overflow: hidden;
+  display: -webkit-box;
+
+  ul {
+    display: flex;
+    animation: scroll-left 20s linear infinite;
+  }
+}
+
+.imageScrollR {
+  overflow: hidden;
+  display: -webkit-box;
+
+  ul {
+    display: flex;
+    animation: scroll-right 20s linear infinite;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.button {
+  text-align: right;
+}
+
+.btnHover {
+  width: 100%;
+  max-width: 150px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  height: 40px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  font-family: "Orbitron";
+  font-weight: 400;
+
+  &:hover {
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.color1 {
+    background-image: linear-gradient(to right, #FC8EAC, #978EFC, #978EFC, #FC8EAC);
+  }
+}
+
+.btnArea {
+  border-image: linear-gradient(to right, #978EFC, #FC8EAC) 1;
+  border-radius: 16px;
+  padding: 6px;
+}
+
+@media (min-width: 560px) and (max-width: 959px) {
+  .illustrationsImages li img {
+    width: 80%;
+  }
+}
+
+@media (min-width: 960px) {
+  .illustrations {
+    padding: 50px 0;
+  }
+
+  .illustrationsImages li {
+    padding: 20px;
+  }
+
+  .btnHover {
+    font-size: 2rem;
+    margin: 20px;
+    height: 55px;
+    max-width: 200px;
+  }
+}

@@ -1,0 +1,72 @@
+.footer {
+  position: relative;
+  padding: 20px 0 0;
+  font-family: "Orbitron";
+  font-weight: 400;
+  background-color: #fff;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.footerContainerText ul {
+  display: none;
+
+  li {
+    padding-left: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+.footer small {
+  padding-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.footerContainerImage img {
+  display: none;
+}
+
+@media (min-width: 560px) {
+  .footerContainerImage img {
+    display: block;
+  }
+
+  .footerContainerText ul {
+    display: flex;
+  }
+
+  .footerContainerText ul {
+    padding-top: 20px;
+  }
+}
+
+@media (min-width: 560px) {
+  .topButton img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.topButton {
+  position: fixed;
+  bottom: 20px;
+  cursor: pointer;
+  transition: .3s;
+  opacity: 0;
+  right: 1.5em;
+
+  img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+}

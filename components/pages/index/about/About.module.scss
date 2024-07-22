@@ -1,0 +1,196 @@
+.about {
+  padding: 50px 0 0;
+}
+
+.aboutContainerh2 {
+  margin-bottom: 10px;
+}
+
+.aboutContainer {
+  h2 span {
+    font-size: 1.3rem;
+    background: none;
+    font-family: "M PLUS 1";
+  }
+
+  h3 {
+    text-align: center;
+    font-family: "Orbitron";
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+  }
+}
+
+.areaH2 {
+  font-size: 2rem;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+.aboutContainer {
+  width: 50%;
+  right: 0;
+}
+
+.circleArea {
+  background: url("/images/About/circle.png") no-repeat center;
+  left: -60px;
+  top: 11vh;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  animation: 10s linear infinite rotation;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotateZ(0);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.fixedArea {
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: contain;
+  color: #fff;
+  position: sticky;
+  max-height: 800px;
+}
+
+.profileArea h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+.aboutContainer p {
+  margin-bottom: 20px;
+}
+
+.fixedArea img {
+  z-index: 99;
+  width: 95%;
+  position: relative;
+}
+
+.snsArea {
+  margin-bottom: 20px;
+
+  &:nth-last-child(2) {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+}
+
+.profileArea img {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 960px) {
+  .fixedArea img:nth-child(1) {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .about section {
+    min-height: auto;
+  }
+
+  .fixedArea {
+    position: relative !important;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    height: 50vh;
+  }
+
+  .about {
+    padding: 40px 0 0;
+  }
+
+  .fixedArea img {
+    z-index: 99;
+    width: 100%;
+    position: relative;
+    left: 10%;
+  }
+
+  .circleArea {
+    left: 60px;
+    top: 0;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+  }
+
+  .snsArea {
+    margin: 20px auto 15px;
+
+    &:nth-last-of-type(1) {
+      margin-top: 0;
+    }
+  }
+
+  .profileArea {
+    margin-top: 8px;
+  }
+
+  .aboutContainer {
+    width: 100%;
+
+    p {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      padding: 0 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 481px) {
+  .fixedArea {
+    img:nth-child(1) {
+      width: 100%;
+      max-width: 250px;
+    }
+
+    max-width: 320px;
+    height: 50vh;
+  }
+
+  .circleArea {
+    left: -40px;
+  }
+}
+
+
+.youtube169 {
+  width: 85%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto 30px;
+  border-radius: 20px;
+  border: 0;
+}

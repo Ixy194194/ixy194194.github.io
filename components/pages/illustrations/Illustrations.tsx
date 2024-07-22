@@ -181,10 +181,10 @@ const Illustrations: FC = () => {
 
   useEffect(() => {
     setShuffledIllustrations(shuffleArray([...illustrations]));
-    document.body.classList.add("illustrationsPage");
+    document.body.classList.add("fixedLogo");
 
     return () => {
-      document.body.classList.remove("illustrationsPage");
+      document.body.classList.remove("fixedLogo");
     };
   }, []);
 

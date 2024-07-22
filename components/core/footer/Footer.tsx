@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import styles from './Footer.module.scss';
 
 const Footer = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [windowWidth, setWindowWidth] = useState(0);
-
 
 	const handleScrollToTop = () => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -16,7 +16,6 @@ const Footer = () => {
 	};
 
 	useEffect(() => {
-		// クライアントサイドでのみ実行するコード
 		setWindowWidth(window.innerWidth);
 
 		const onScroll = () => {
@@ -30,31 +29,29 @@ const Footer = () => {
 			window.removeEventListener('resize', handleResize);
 		};
 	}, [windowWidth]);
+
 	return (
-		<footer className="footer">
-			<div className="footer-container">
-				<div className="footer-container-image">
+		<footer className={styles.footer}>
+			<div className={styles.footerContainer}>
+				<div className={styles.footerContainerImage}>
 					<img src="/images/footer/footer_Ixy.png" alt="フッターアイコン" />
 				</div>
-				<div className="footer-container-text">
+				<div className={styles.footerContainerText}>
 					<ul>
 						<li><Link href="/illustrations">Illustrations</Link></li>
 						<li><Link href="/#Games">Games</Link></li>
 						<li><Link href="/#About">About</Link></li>
 						<li><Link href="/goods">Goods</Link></li>
-						<li><a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer">Contact</a>
-						</li>
+						<li><a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer">Contact</a></li>
 					</ul>
-					<small>&copy; 2024 Ixy</small>
+					<small>&copy; {new Date().getFullYear()} Ixy</small>
 				</div>
 			</div>
-			<div className={`top_button ${isScrolled ? 'active' : ''}`}
-				 onClick={handleScrollToTop}
-			>
+			<div className={`${styles.topButton} ${isScrolled ? styles.active : ''}`} onClick={handleScrollToTop}>
 				<Image src="/images/footer/top_button.png" alt="トップへ戻るボタン" width={50} height={50} />
 			</div>
 		</footer>
-	)
-}
+	);
+};
 
 export default Footer;

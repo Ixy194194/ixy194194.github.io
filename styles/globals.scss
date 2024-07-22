@@ -1,3 +1,237 @@
 @use "./node_modules/destyle.css/destyle.css";
-@use "style";
-@use "common";
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap');
+
+:root {
+  --color-text:#fff;
+  --color-bg:#000;
+  --color-link:#f9d77e;
+  --color-link-hover:#fff;
+  --color-info:#efc453;
+  --glitch-width:100vw;
+  --glitch-height:100vh;
+  --gap-horizontal:10px;
+  --gap-vertical:5px;
+  --time-anim:4s;
+  --delay-anim:2s;
+  --blend-mode-1:none;
+  --blend-mode-2:none;
+  --blend-mode-3:none;
+  --blend-mode-4:none;
+  --blend-mode-5:overlay;
+  --blend-color-1:transparent;
+  --blend-color-2:transparent;
+  --blend-color-3:transparent;
+  --blend-color-4:transparent;
+  --blend-color-5:#af4949;
+}
+
+html {
+  font-size: 62.5%;
+  width: 100%;
+}
+
+body {
+  color: #333;
+  font-size: 1.6em;
+  line-height: 2.4rem;
+  text-align: center;
+  text-decoration: none;
+  font-family: "M PLUS 1";
+  font-weight: 600;
+}
+
+* {
+  box-sizing: border-box;
+
+  &:before, &:after {
+    box-sizing: border-box;
+  }
+}
+
+img {
+  height: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+.headerLogo {
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  text-align: left;
+}
+
+.logo {
+  width: 80px;
+  transition: .3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.fixedLogo {
+  .logo {
+    width: 80px;
+    transition: inherit;
+    opacity: inherit;
+    visibility: inherit;
+    z-index: -99;
+  }
+}
+
+.nav {
+  z-index: 999999;
+  position: absolute;
+  top: -64px;
+  right: 0;
+  background: #FFF;
+  border-radius: 30px;
+  margin: 30px 10px 0 0;
+  padding: 0 50px;
+  border: 2px solid #FC8EAC;
+  text-align: left;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 500ms ease-out;
+}
+
+.nav-transition-enter,
+.nav-transition-exit.nav-transition-exit-active {
+  max-height: 0;
+  padding: 0 50px;
+}
+
+.nav-transition-exit,
+.nav-transition-enter.nav-transition-enter-active,
+.nav-transition-enter-done {
+  max-height: 600px;
+  padding: 30px 50px;
+  top: 0;
+}
+
+.nav-transition-enter,
+.nav-transition-exit {
+  top: -64px;
+}
+
+@media (min-width: 960px) {
+  .headerLogo {
+    text-align: left;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .fixedLogo {
+    .logo {
+      width: 120px;
+      transition: inherit;
+      opacity: inherit;
+      visibility: inherit;
+      z-index: -99;
+    }
+  }
+
+  .nav {
+    z-index: 9999;
+    position: absolute;
+    top: -64px;
+    right: 0;
+    background: #FFF;
+    border-radius: 30px;
+    margin: 60px 30px 0 0;
+    padding: 0 150px 0 50px;
+    border: 2px solid #FC8EAC;
+    text-align: left;
+    overflow: hidden;
+    max-height: 0;
+    transition: all 500ms ease-out;
+  }
+
+
+  .nav-transition-enter,
+  .nav-transition-exit.nav-transition-exit-active {
+    max-height: 0;
+    padding: 0 150px 0 50px;
+  }
+  
+  .nav-transition-exit,
+  .nav-transition-enter.nav-transition-enter-active,
+  .nav-transition-enter-done {
+    max-height: 640px;
+    padding: 50px 150px 50px 50px;
+    top: 0;
+  }
+  
+  .nav-transition-enter,
+  .nav-transition-exit {
+    top: -64px;
+  }
+}
+
+.twitter-timeline {
+  max-width: 600px !important;
+  margin: 0 auto;
+}
+
+section h2 {
+  text-align: center;
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 20px;
+  font-size: 2rem;
+
+  span {
+    background: linear-gradient(transparent 60%, #FFF 60%);
+  }
+}
+
+.grid-background {
+  background-color: #F5F5F5;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  background-image: linear-gradient(0deg, transparent calc(100% - 1px), #fff calc(100% - 1px)), linear-gradient(90deg, transparent calc(100% - 1px), #fff calc(100% - 1px));
+  background-repeat: repeat;
+  background-position: center center;
+  background-size: clamp(40px, 3.33vw, 42px) clamp(40px, 3.33vw, 42px);
+}
+
+@media (min-width: 960px) {
+  section h2 {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+  }
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close img {
+  margin-bottom: 2px;
+}

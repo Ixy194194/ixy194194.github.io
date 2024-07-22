@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
-import Main from '../components/pages/illustrations/Illustrations';
-import Splash from '../components/core/splash/Splash';
 
-export default function Illustrations() {
+export default function Goods() {
 	const [isLoaded, setIsLoaded] = useState(false);
 
 	useEffect(() => {
@@ -13,7 +11,7 @@ export default function Illustrations() {
 
 	return (
 		<>
-			<Main />
+			<Goods />
 		</>
 	);
 }

@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react';
+import styles from './Splash.module.scss';
 
 interface SplashProps {
     isLoaded: boolean;
@@ -14,16 +15,16 @@ const Splash: React.FC<SplashProps> = ({ isLoaded }) => {
 
 		const handleLoad = () => {
 			setTimeout(() => {
-				document.getElementById('splash')?.classList.add('fade-out');
+				document.getElementById('splash')?.classList.add(styles.fadeOut);
 			}, 600);
 		};
 
 		const handleVisit = () => {
 			if (sessionStorage.getItem('visit')) {
-				document.getElementById('splash')?.classList.add('hidden');
+				document.getElementById('splash')?.classList.add(styles.hidden);
 			} else {
 				setTimeout(() => {
-					document.getElementById('splash')?.classList.add('fade-out');
+					document.getElementById('splash')?.classList.add(styles.fadeOut);
 					sessionStorage.setItem('visit', 'true');
 				}, 8000);
 			}
@@ -39,9 +40,8 @@ const Splash: React.FC<SplashProps> = ({ isLoaded }) => {
 	}, []);
 
 	return (
-		<div id="splash" className="splash">
+		<div id="splash" className={styles.splash}>
 			<div
-				id="splash_text"
 				style={{
 					position: 'absolute',
 					left: '50%',
