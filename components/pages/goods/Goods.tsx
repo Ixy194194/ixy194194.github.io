@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Goods.module.scss';
 
-const Main: FC = () => {
+const GoodsComponent: FC = () => {
   useEffect(() => {
     document.body.classList.add('fixedLogo');
 
@@ -73,4 +73,4 @@ const Main: FC = () => {
   );
 };
 
-export default Main;
+export default GoodsComponent;

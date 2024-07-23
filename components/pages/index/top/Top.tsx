@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styles from './Top.module.scss';
 
-const Top: FC = () => {
+const TopComponent: FC = () => {
   return (
     <div className={styles.sectionTop}>
       <div className={styles.sectionTopMV}>
@@ -30,4 +30,4 @@ const Top: FC = () => {
   );
 };
 
-export default Top;
+export default TopComponent;

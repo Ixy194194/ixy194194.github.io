@@ -1,7 +1,7 @@
 import styles from './Games.module.scss';
 import { FC } from 'react';
 
-const Games: FC = () => {
+const GamesComponent: FC = () => {
   return (
     <section className={styles.games} id="games">
       <div className={styles.decorationArea}>
@@ -41,4 +41,4 @@ const Games: FC = () => {
   );
 };
 
-export default Games;
+export default GamesComponent;

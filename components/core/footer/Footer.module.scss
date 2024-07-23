@@ -51,22 +51,3 @@
     height: 50px;
   }
 }
-
-.topButton {
-  position: fixed;
-  bottom: 20px;
-  cursor: pointer;
-  transition: .3s;
-  opacity: 0;
-  right: 1.5em;
-
-  img {
-    width: 70px;
-    height: 70px;
-  }
-}
-
-.active {
-  opacity: 1;
-  visibility: visible;
-}

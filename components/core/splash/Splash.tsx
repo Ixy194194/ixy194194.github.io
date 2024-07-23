@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './Splash.module.scss';
 
-const Splash: React.FC = () => {
+const SplashComponent: React.FC = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -56,4 +56,4 @@ const Splash: React.FC = () => {
   );
 };
 
-export default Splash;
+export default SplashComponent;

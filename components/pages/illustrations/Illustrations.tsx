@@ -172,7 +172,7 @@ const shuffleArray = (array: any[]) => {
   return array.sort(() => Math.random() - 0.5);
 };
 
-const Main: FC = () => {
+const IllustrationsComponent: FC = () => {
   const [filter, setFilter] = useState('all');
   const [shuffledIllustrations, setShuffledIllustrations] = useState(illustrations);
   const [isGrayDisplayVisible, setIsGrayDisplayVisible] = useState(false);
@@ -272,4 +272,4 @@ const Main: FC = () => {
   );
 };
 
-export default Main;
+export default IllustrationsComponent;

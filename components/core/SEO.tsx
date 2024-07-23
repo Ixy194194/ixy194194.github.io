@@ -7,7 +7,7 @@ interface SEOProps {
   url?: string;
 }
 
-const SEO: React.FC<SEOProps> = ({ title, description, ogImage, url }) => {
+const SEOComponent: React.FC<SEOProps> = ({ title, description, ogImage, url }) => {
   return (
     <Head>
       <title>{title}</title>
@@ -27,4 +27,4 @@ const SEO: React.FC<SEOProps> = ({ title, description, ogImage, url }) => {
   );
 };
 
-export default SEO;
+export default SEOComponent;

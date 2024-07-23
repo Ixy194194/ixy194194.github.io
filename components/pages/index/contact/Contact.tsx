@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import styles from './Contact.module.scss';
 
-const Contact: FC = () => {
+const ContactComponent: FC = () => {
   const [repeatCount, setRepeatCount] = useState(1);
 
   useEffect(() => {
@@ -43,4 +43,4 @@ const Contact: FC = () => {
   );
 };
 
-export default Contact;
+export default ContactComponent;

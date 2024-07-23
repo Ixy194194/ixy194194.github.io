@@ -235,3 +235,81 @@ section h2 {
 .close img {
   margin-bottom: 2px;
 }
+
+.topButton {
+  display: none;
+  pointer-events: none;
+  position: fixed;
+  bottom: 20px;
+  cursor: pointer;
+  transition: .3s;
+  opacity: 0;
+  right: 1.5em;
+
+  img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.fixedBanner {
+  display: none;
+  pointer-events: none;
+  right: 20px;
+  position: fixed;
+  bottom: 20px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 999;
+  padding: 0;
+  margin: 0;
+  
+  .close {
+    text-align: right;
+    width: 190px;
+  }
+
+  .closeImg {
+    width: 90%;
+    height: auto;
+    max-width: 200px;
+  }
+}
+
+body.index-page {
+  .fixedBanner {
+    display: block;
+  }
+}
+
+body:not(.index-page) {
+  .topButton {
+    display: block;
+  }
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.pc {
+  display: none !important;
+}
+
+.sp {
+  display: block !important;
+  width:50%;
+  top:0;
+  max-width:400px;
+}
+
+@media(min-width:960px) {
+  .pc {
+    display: block !important;
+  }
+  .sp {
+    display: none !important;
+  }
+}

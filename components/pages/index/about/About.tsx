@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styles from './About.module.scss';
 
-const About: FC = () => {
+const AboutComponent: FC = () => {
   return (
     <section className={`${styles.about} anchor`} id="about">
       <h2>
@@ -65,4 +65,4 @@ const About: FC = () => {
   );
 };
 
-export default About;
+export default AboutComponent;

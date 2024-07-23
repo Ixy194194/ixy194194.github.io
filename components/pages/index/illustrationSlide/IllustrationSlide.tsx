@@ -1,7 +1,8 @@
 import { FC } from 'react';
-import styles from './Illustrations.module.scss';
+import styles from './IllustrationSlide.module.scss';
+import Link from 'next/link';
 
-const Illustrations: FC = () => {
+const IllustrationSlideComponent: FC = () => {
   const images = [
     { src: '/images/Illustrations/image_1.webp', alt: 'イラスト' },
     { src: '/images/Illustrations/image_2.webp', alt: 'イラスト' },
@@ -59,12 +60,12 @@ const Illustrations: FC = () => {
         </div>
       </div>
       <div className={styles.button}>
-        <a href="illustrations">
+        <Link href="/illustrations">
           <button className={`${styles.btnHover} ${styles.color1}`}>More</button>
-        </a>
+        </Link>
       </div>
     </section>
   );
 };
 
-export default Illustrations;
+export default IllustrationSlideComponent;

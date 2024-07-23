@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FC } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Link from 'next/link';
 import styles from './Header.module.scss';
 
-const Header = () => {
+const HeaderComponent: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
@@ -116,4 +116,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderComponent;

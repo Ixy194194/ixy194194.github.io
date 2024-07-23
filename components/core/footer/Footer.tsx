@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Footer.module.scss';
 
-const Footer = () => {
+const FooterComponent: FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
 
@@ -13,6 +13,10 @@ const Footer = () => {
 
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
+  };
+
+  const closeBanner = () => {
+    document.body.classList.remove('index-page');
   };
 
   useEffect(() => {
@@ -42,10 +46,10 @@ const Footer = () => {
               <Link href="/illustrations">Illustrations</Link>
             </li>
             <li>
-              <Link href="/#Games">Games</Link>
+              <Link href="/#games">Games</Link>
             </li>
             <li>
-              <Link href="/#About">About</Link>
+              <Link href="/#about">About</Link>
             </li>
             <li>
               <Link href="/goods">Goods</Link>
@@ -59,10 +63,7 @@ const Footer = () => {
           <small>&copy; {new Date().getFullYear()} Ixy</small>
         </div>
       </div>
-      <div
-        className={`${styles.topButton} ${isScrolled ? styles.active : ''}`}
-        onClick={handleScrollToTop}
-      >
+      <div className={`topButton ${isScrolled ? 'active' : ''}`} onClick={handleScrollToTop}>
         <Image
           src="/images/footer/top_button.png"
           alt="トップへ戻るボタン"
@@ -70,8 +71,17 @@ const Footer = () => {
           height={50}
         />
       </div>
+      <div className={`fixedBanner ${isScrolled ? 'active' : ''}`}>
+        <p className="close">
+          <img src="/images/footer/close.png" alt="閉じる" />
+          <span onClick={closeBanner}>とじる</span>
+        </p>
+        <Link href="/goods">
+          <img className="closeImg" src="/images/footer/goods.png" alt="グッズアイコン" />
+        </Link>
+      </div>
     </footer>
   );
 };
 
-export default Footer;
+export default FooterComponent;
