@@ -58,13 +58,15 @@ const HeaderComponent: FC = () => {
         </Link>
       </div>
       <div className={styles.headerContentWrapper}>
-        <p className={styles.headerMenu} onClick={handleHamburgerClick}>
-          {isMenuOpen ? 'CLOSE' : 'MENU'}
-        </p>
-        <div id={styles.hamburger} onClick={handleHamburgerClick}>
-          <div className={`${styles.icon} ${isMenuOpen ? styles.open : ''}`}>
-            <span></span>
-            <span></span>
+        <div className={styles.menuContainer}>
+          <p className={styles.headerMenu} onClick={handleHamburgerClick}>
+            {isMenuOpen ? 'CLOSE' : 'MENU'}
+          </p>
+          <div id={styles.hamburger} onClick={handleHamburgerClick}>
+            <div className={`${styles.icon} ${isMenuOpen ? styles.open : ''}`}>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </div>
         <CSSTransition in={isMenuOpen} timeout={500} classNames="nav-transition">
