@@ -4,9 +4,12 @@ import Link from 'next/link';
 import styles from './Goods.module.scss';
 
 const GoodsComponent: FC = () => {
+  // コンポーネントの初回レンダリング時に実行
   useEffect(() => {
+    // ヘッダーのロゴを固定
     document.body.classList.add('fixedLogo');
 
+    // 移管時にヘッダーのロゴを固定解除
     return () => {
       document.body.classList.remove('fixedLogo');
     };

@@ -16,6 +16,7 @@ const IllustrationSlideComponent: FC = () => {
     { src: '/images/Illustrations/image_10.webp', alt: 'イラスト' },
   ];
 
+  // 画像を左右にスクロールさせるためのレイアウトを作成するため画像を左右のカラムに分割
   const half = Math.ceil(images.length / 2);
   const leftColumn = images.slice(0, half);
   const rightColumn = images.slice(half);

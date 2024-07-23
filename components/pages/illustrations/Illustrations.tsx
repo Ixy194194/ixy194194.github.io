@@ -2,6 +2,7 @@ import { FC, useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './Illustrations.module.scss';
 
+// イラストのデータを定義
 const illustrations = [
   { src: '/images/Illustrations/anime/1_image_1.webp', category: ['アニメ'] },
   { src: '/images/Illustrations/anime/1_image_2.webp', category: ['アニメ'] },
@@ -168,26 +169,33 @@ const illustrations = [
   { src: '/images/Illustrations/game/3_image_16.webp', category: ['ゲーム'] },
 ];
 
+// 配列をシャッフルする関数
+// イラストをランダムに表示するために使用
 const shuffleArray = (array: any[]) => {
   return array.sort(() => Math.random() - 0.5);
 };
 
 const IllustrationsComponent: FC = () => {
-  const [filter, setFilter] = useState('all');
-  const [shuffledIllustrations, setShuffledIllustrations] = useState(illustrations);
-  const [isGrayDisplayVisible, setIsGrayDisplayVisible] = useState(false);
-  const [grayDisplaySrc, setGrayDisplaySrc] = useState('');
-  const [isFading, setIsFading] = useState(false);
+  const [filter, setFilter] = useState('all'); // フィルターの状態を管理 デフォルトは全て
+  const [shuffledIllustrations, setShuffledIllustrations] = useState(illustrations); // シャッフルされたイラストの状態を管理
+  const [isGrayDisplayVisible, setIsGrayDisplayVisible] = useState(false); // オーバーレイの表示状態を管理
+  const [grayDisplaySrc, setGrayDisplaySrc] = useState(''); // グレーディスプレイに表示する画像のソースを管理
+  const [isFading, setIsFading] = useState(false); // フェードイン・アウトの状態を管理
 
+  // コンポーネントの初回レンダリング時に実行
   useEffect(() => {
+    // イラストをシャッフル
     setShuffledIllustrations(shuffleArray([...illustrations]));
+    // ヘッダーのロゴを固定
     document.body.classList.add('fixedLogo');
 
+    // ページ移管時にヘッダーのロゴ固定を解除
     return () => {
       document.body.classList.remove('fixedLogo');
     };
   }, []);
 
+  // フィルタークリック時の処理
   const handleFilterClick = (category: string) => {
     setIsFading(true);
     setTimeout(() => {
@@ -196,16 +204,19 @@ const IllustrationsComponent: FC = () => {
     }, 200);
   };
 
+  // フィルターに基づいてイラストをフィルタリング
   const filteredIllustrations =
     filter === 'all'
       ? shuffledIllustrations
       : shuffledIllustrations.filter((illustration) => illustration.category.includes(filter));
 
+  // イラストクリック時の処理
   const handleImageClick = (src: string) => {
     setGrayDisplaySrc(src);
     setIsGrayDisplayVisible(true);
   };
 
+  // オーバーレイクリック時の処理
   const handleOverlayClick = () => {
     setIsGrayDisplayVisible(false);
   };

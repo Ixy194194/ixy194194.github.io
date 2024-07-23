@@ -88,13 +88,11 @@
 
   span {
     display: inline-block;
-    -webkit-transform: rotateY(0);
     transform: rotateY(0);
   }
 
   &:hover span {
     transition: .88s;
-    -webkit-transform: rotateY(360deg);
     transform: rotateY(360deg);
   }
 }

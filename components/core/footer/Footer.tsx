@@ -4,30 +4,38 @@ import Link from 'next/link';
 import styles from './Footer.module.scss';
 
 const FooterComponent: FC = () => {
+  // スクロール位置を管理するための状態
   const [isScrolled, setIsScrolled] = useState(false);
+  // ウィンドウ幅を管理するための状態
   const [windowWidth, setWindowWidth] = useState(0);
 
+  // トップへスクロールする関数
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // ウィンドウのリサイズを処理する関数
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
 
+  // バナーを閉じる関数
   const closeBanner = () => {
     document.body.classList.remove('index-page');
   };
 
   useEffect(() => {
+    // 初回レンダリング時にウィンドウ幅を設定
     setWindowWidth(window.innerWidth);
 
+    // スクロールイベントのリスナーを追加
     const onScroll = () => {
       setIsScrolled(window.scrollY > 1000);
     };
     window.addEventListener('scroll', onScroll);
     window.addEventListener('resize', handleResize);
 
+    // クリーンアップ関数でイベントリスナーを削除
     return () => {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', handleResize);
