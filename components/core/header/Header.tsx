@@ -73,17 +73,17 @@ const HeaderComponent: FC = () => {
           <nav className={`nav ${isMenuOpen ? styles.open : ''}`}>
             <ul className={styles.navList}>
               {[
-                { name: 'Illustrations', link: '/illustrations' },
-                { name: 'Games', link: '/#games' },
-                { name: 'About', link: '/#about' },
-                { name: 'Goods', link: '/goods' },
-                { name: 'Contact', link: '/#contact' },
+                { name: 'Illustrations', nameKana: 'イラスト', link: '/illustrations' },
+                { name: 'Games', nameKana: 'ゲーム', link: '/#games' },
+                { name: 'About', nameKana: 'いくしーについて', link: '/#about' },
+                { name: 'Goods', nameKana: 'グッズ', link: '/goods' },
+                { name: 'Contact', nameKana: 'お問い合わせ', link: '/#contact' },
               ].map((item, index) => (
                 <li key={index} className={styles.navItem}>
                   <Link href={`${item.link}`} onClick={handleNavLinkClick}>
                     {splitText(item.name)}
                   </Link>
-                  <p>{item.name === '#contact' ? 'お問い合わせ' : item.name}</p>
+                  <p>{item.nameKana}</p>
                 </li>
               ))}
             </ul>
