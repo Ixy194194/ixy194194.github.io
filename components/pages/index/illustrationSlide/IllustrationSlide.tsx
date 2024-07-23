@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import styles from './IllustrationSlide.module.scss';
 import Link from 'next/link';
+import styles from './IllustrationSlide.module.scss';
 
 const IllustrationSlideComponent: FC = () => {
   const images = [

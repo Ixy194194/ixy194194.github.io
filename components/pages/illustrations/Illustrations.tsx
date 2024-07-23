@@ -222,50 +222,50 @@ const IllustrationsComponent: FC = () => {
   };
 
   return (
-    <section className={styles['filter-list__container']}>
+    <section className={styles.filterListContainer}>
       <h2>
         <span>Illustrations</span>
       </h2>
-      <div className={styles['filter-list-box']}>
-        <ul className={styles['filter-list']}>
+      <div className={styles.filterListBox}>
+        <ul className={styles.filterList}>
           <li
             data-filter="all"
-            className={filter === 'all' ? styles['is-active'] : ''}
+            className={filter === 'all' ? styles.isActive : ''}
             onClick={() => handleFilterClick('all')}
           >
             <span>#すべて</span>
           </li>
           <li
             data-filter="anime"
-            className={filter === 'アニメ' ? styles['is-active'] : ''}
+            className={filter === 'アニメ' ? styles.isActive : ''}
             onClick={() => handleFilterClick('アニメ')}
           >
             <span>#アニメ</span>
           </li>
           <li
             data-filter="Vtuber"
-            className={filter === 'Vtuber' ? styles['is-active'] : ''}
+            className={filter === 'Vtuber' ? styles.isActive : ''}
             onClick={() => handleFilterClick('Vtuber')}
           >
             <span>#Vtuber</span>
           </li>
           <li
             data-filter="VOCALOID"
-            className={filter === 'ボカロ' ? styles['is-active'] : ''}
+            className={filter === 'ボカロ' ? styles.isActive : ''}
             onClick={() => handleFilterClick('ボカロ')}
           >
             <span>#ボカロ</span>
           </li>
           <li
             data-filter="game"
-            className={filter === 'ゲーム' ? styles['is-active'] : ''}
+            className={filter === 'ゲーム' ? styles.isActive : ''}
             onClick={() => handleFilterClick('ゲーム')}
           >
             <span>#ゲーム</span>
           </li>
         </ul>
       </div>
-      <ul className={`${styles['filter-item']} ${!isFading ? styles['fade-in'] : ''}`}>
+      <ul className={`${styles.filterItem} ${!isFading ? styles.fadeIn : ''}`}>
         {filteredIllustrations.map((illustration, index) => (
           <li key={index} onClick={() => handleImageClick(illustration.src)}>
             <Image src={illustration.src} width={300} height={400} alt="イラスト" />

@@ -1,5 +1,5 @@
-import styles from './Games.module.scss';
 import { FC } from 'react';
+import styles from './Games.module.scss';
 
 const GamesComponent: FC = () => {
   return (

@@ -1,8 +1,8 @@
-.filter-list-box {
+.filterListBox {
   text-align: center;
 }
 
-.filter-list {
+.filterList {
   display: grid;
   grid-template-columns: repeat(auto-fit, 100px);
   justify-content: center;
@@ -20,24 +20,24 @@
   }
 }
 
-.filter-list__container {
+.filterListContainer {
   max-width: 1440px;
   margin: 0 auto;
 }
 
-.filter-list li.is-active {
+.filterList li.isActive {
   background: #FC8EAC;
   color: #fff;
 }
 
-.filter-item {
+.filterItem {
   display: flex;
   flex-wrap: wrap;
   height: auto;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 
-  &.fade-in {
+  &.fadeIn {
     opacity: 1;
   }
 
@@ -99,10 +99,8 @@
   }
 }
 
-
-
 @media (min-width: 560px) and (max-width: 959px) {
-  .filter-item li {
+  .filterItem li {
     width: calc(33%);
   }
 
@@ -113,11 +111,11 @@
 }
 
 @media (min-width: 960px) {
-  .filter-item li {
+  .filterItem li {
     width: calc(25%);
   }
 
-  .filter-list li {
+  .filterList li {
     padding: 10px;
     border-radius: 30px;
     margin: 0 0 0 5px;
