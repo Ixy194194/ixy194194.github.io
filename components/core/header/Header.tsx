@@ -77,7 +77,7 @@ const HeaderComponent: FC = () => {
                 { name: 'Games', nameKana: 'ゲーム', link: '/#games' },
                 { name: 'About', nameKana: 'いくしーについて', link: '/#about' },
                 { name: 'Goods', nameKana: 'グッズ', link: '/goods' },
-                { name: 'Contact', nameKana: 'お問い合わせ', link: '/#contact' },
+                { name: 'Contact', nameKana: 'お問い合わせ', link: '/contact' },
               ].map((item, index) => (
                 <li key={index} className={styles.navItem}>
                   <Link href={`${item.link}`} onClick={handleNavLinkClick}>

@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import styles from './Contact.module.scss';
+import Link from 'next/link';
 
 const ContactComponent: FC = () => {
   // 画面の幅に応じて動的に要素を追加し、どのデバイスでも正常にスクロールされるように設計されています。
@@ -43,9 +44,9 @@ const ContactComponent: FC = () => {
 
   return (
     <div className={styles.conveyor} id="contact">
-      <a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer">
+      <Link href="/contact">
         <div className={styles.belt}>{renderImages()}</div>
-      </a>
+      </Link>
     </div>
   );
 };

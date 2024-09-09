@@ -63,9 +63,7 @@ const FooterComponent: FC = () => {
               <Link href="/goods">Goods</Link>
             </li>
             <li>
-              <a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer">
-                Contact
-              </a>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
           <small>&copy; {new Date().getFullYear()} Ixy</small>
