@@ -13,7 +13,7 @@ const ContactComponent: FC = () => {
     // 画面幅に応じてrepeatCountを更新する関数
     const updateRepeatCount = () => {
       const width = window.innerWidth;
-      const count = Math.ceil(width / 200); // 200pxごとに1つの画像を表示
+      const count = Math.ceil(width / (width > 959 ? 300 : 200)) + 1; // モバイル200px, デスクトップ300pxごとに1つの画像を表示
       setRepeatCount(count);
     };
 
@@ -35,7 +35,7 @@ const ContactComponent: FC = () => {
       images.push(
         <div key={i}>
           <img src="/images/About/contact.png" alt="コンタクト" />
-        </div>,
+        </div>
       );
     }
     return images;
@@ -44,10 +44,7 @@ const ContactComponent: FC = () => {
   return (
     <div className={styles.conveyor} id="contact">
       <a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer">
-        <div className={styles.belt1}>{renderImages()}</div>
-      </a>
-      <a href="mailto:iixyinfo333@gmail.com" target="_blank" rel="noopener noreferrer">
-        <div className={styles.belt2}>{renderImages()}</div>
+        <div className={styles.belt}>{renderImages()}</div>
       </a>
     </div>
   );

@@ -11,26 +11,16 @@
   img {
     width: 200px;
   }
+
+  &:hover div {
+    animation-play-state: paused !important;
+  }
 }
 
-.belt1, .belt2 {
+.belt {
   display: inline-flex;
   flex: none;
-  animation: belt 60s linear infinite;
-}
-
-.conveyor:hover div {
-  animation-play-state: paused !important;
-}
-
-@keyframes belt {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
+  animation: belt-mobile 5s linear infinite;
 }
 
 @media (min-width: 960px) {
@@ -42,9 +32,33 @@
     }
   }
 
-  .belt1 div:hover, .belt2 div:hover {
-    transform: scale(1.1);
-    transition-duration: 0.3s;
-    opacity: 0.7;
+  .belt {
+    animation: belt-desktop 5s linear infinite;
+
+    div:hover {
+      transform: scale(1.1);
+      transition-duration: 0.3s;
+      opacity: 0.7;
+    }
+  }
+}
+
+@keyframes belt-desktop {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-300px);
+  }
+}
+
+@keyframes belt-mobile {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-200px);
   }
 }
