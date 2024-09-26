@@ -16,7 +16,7 @@ export default function Home() {
       <SEOComponent
         title="Ixy Official Website"
         description="イラストレーターIxy(いくしー)のウェブサイトです。"
-        ogImage="https://ixy194194.github.io/site_thumbnail.jpg"
+        ogImage="https://ixyis.com/ogp_image.png"
         url="https://ixyis.com/"
       />
       <SplashComponent />

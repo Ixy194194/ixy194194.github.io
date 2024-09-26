@@ -7,7 +7,7 @@ export default function Illustrations() {
       <SEOComponent
         title="Illustrations - Ixy Official Website"
         description="イラストレーターIxy(いくしー)のウェブサイトです。"
-        ogImage="https://ixy194194.github.io/site_thumbnail.jpg"
+        ogImage="https://ixyis.com/ogp_image.png"
         url="https://ixyis.com/"
       />
       <IllustrationsComponent />
