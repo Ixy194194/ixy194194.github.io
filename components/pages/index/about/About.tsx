@@ -26,7 +26,6 @@ const AboutComponent: FC = () => {
                 <br />
                 Youtubeではお絵かき雑談配信やゲーム実況などを行っている。
               </p>
-              <img src="/images/About/address.svg" alt="" />
             </div>
           </section>
           <section>

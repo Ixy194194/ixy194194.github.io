@@ -16,6 +16,7 @@
     cursor: pointer;
     transition: all 0.3s;
     font-size: 1.2rem;
+    font-weight: 750;
     padding: 0.5em 1.2em;
   }
 }
@@ -23,6 +24,8 @@
 .filterListContainer {
   max-width: 1440px;
   margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .filterList li.isActive {
