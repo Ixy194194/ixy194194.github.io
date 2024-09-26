@@ -1,0 +1,114 @@
+.goodContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 3em;
+}
+
+.goodsItem {
+  position: relative;
+}
+
+.goodImg {
+  width: 90%;
+  max-width: 300px;
+}
+
+.star, .guru {
+  display: none;
+}
+
+.btnHover {
+  &:hover {
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.color1 {
+    background-image: linear-gradient(to right, #FC8EAC, #978EFC, #978EFC, #FC8EAC);
+  }
+}
+
+.goods h3 {
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-top: 10px;
+}
+
+.button {
+  img {
+    padding-bottom: 5px;
+    padding-left: 5px;
+  }
+
+  text-align: center;
+
+  &:nth-of-type(2) {
+    margin-bottom: 30px;
+  }
+}
+
+.btnHover {
+  width: 100%;
+  max-width: 250px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+@media (min-width: 650px) {
+  .goodContainer {
+    max-width: 900px;
+  }
+
+  .star {
+    position: absolute;
+    display: block;
+    right: 5%;
+    width: 7%;
+    top: 5%;
+  }
+
+  .guru {
+    position: absolute;
+    display: block;
+    left: 10%;
+    width: 10%;
+    bottom: 10%;
+  }
+}
+
+@media (min-width: 960px) {
+  .btnHover {
+    max-width: 300px;
+  }
+
+  .goods h3 {
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  .goodImg {
+    max-width: 400px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+}

@@ -1,0 +1,64 @@
+.conveyor {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 3em;
+
+  a {
+    min-width: auto;
+  }
+
+  img {
+    width: 200px;
+  }
+
+  &:hover div {
+    animation-play-state: paused !important;
+  }
+}
+
+.belt {
+  display: inline-flex;
+  flex: none;
+  animation: belt-mobile 5s linear infinite;
+}
+
+@media (min-width: 960px) {
+  .conveyor {
+    margin-top: 40px;
+
+    img {
+      width: 300px;
+    }
+  }
+
+  .belt {
+    animation: belt-desktop 5s linear infinite;
+
+    div:hover {
+      transform: scale(1.1);
+      transition-duration: 0.3s;
+      opacity: 0.7;
+    }
+  }
+}
+
+@keyframes belt-desktop {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-300px);
+  }
+}
+
+@keyframes belt-mobile {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-200px);
+  }
+}

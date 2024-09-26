@@ -1,0 +1,211 @@
+.games {
+  position: relative;
+  width: 100%;
+  background-color: #D9D9D9;
+  background-image: linear-gradient(0deg, transparent calc(100% - 1px), #fff calc(100% - 1px)), linear-gradient(90deg, transparent calc(100% - 1px), #fff calc(100% - 1px));
+  background-repeat: repeat;
+  background-position: center center;
+  background-size: clamp(40px, 3.33vw, 42px) clamp(40px, 3.33vw, 42px);
+  height: 50%;
+  padding: 35px 0 50px;
+  overflow: hidden;
+}
+
+.buttonGames {
+  display: block;
+  position: relative;
+  width: 50%;
+  max-width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+
+  &:nth-of-type(2) {
+    margin-top: 20px;
+  }
+}
+
+.btn1 {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+}
+
+.btn1Bg {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 100%;
+}
+
+.btn2 {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.btn2Bg {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 100%;
+}
+
+.gamesDecoration1 {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  width: 20%;
+  max-width: 100px;
+  height: auto;
+  display: block;
+  animation: shake 1.5s linear infinite;
+}
+
+.gamesDecoration2 {
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  width: 20%;
+  max-width: 120px;
+  height: auto;
+  display: block;
+  animation: shake 1.5s linear infinite;
+  overflow: hidden;
+}
+
+.gamesDecoration3 {
+  animation: rotation 4s linear infinite;
+  position: absolute;
+  bottom: 50%;
+  max-width: 50px;
+  right: 3%;
+  height: auto;
+  display: block;
+}
+
+.gamesDecoration4 {
+  top: 5%;
+  position: absolute;
+  right: 20%;
+  max-width: 100px;
+  width: 20%;
+}
+
+.gamesDecoration5 {
+  top: 50%;
+  position: absolute;
+  left: 10%;
+  max-width: 5%;
+}
+
+.gamesDecoration6 {
+  right: 10%;
+  position: absolute;
+  bottom: 10%;
+  max-width: 5%;
+}
+
+@media (min-width: 960px) {
+  .games {
+    padding: 0;
+  }
+
+  .buttonGames {
+    margin: 0 50px;
+  }
+
+  .gamesLink {
+    display: flex;
+    justify-content: center;
+  }
+
+  .buttonGames {
+    width: 250px;
+    margin: 0 50px;
+
+    &:nth-of-type(2) {
+      margin-top: 0px;
+    }
+  }
+
+  .gamesDecoration1 {
+    top: 40%;
+    left: 5%;
+    width: 10%;
+    max-width: 140px;
+  }
+
+  .gamesDecoration2 {
+    top: 30%;
+    right: 5%;
+    width: 15%;
+    max-width: 120px;
+  }
+
+  .gamesDecoration3 {
+    max-width: 100px;
+    left: 46%;
+    bottom: 10%;
+  }
+
+  .gamesDecoration4 {
+    right: 30%;
+  }
+
+  .gamesDecoration5 {
+    left: 20%;
+    top: 20%;
+  }
+
+  .gamesDecoration6 {
+    right: 20%;
+    position: absolute;
+    bottom: 20%;
+  }
+
+  .decorationArea {
+    max-width: 1240px;
+    margin: 0 auto;
+    position: relative;
+    padding: 50px 0 150px;
+  }
+}
+
+.btn1:hover, .btn2:hover {
+  transform: translate(2px, 5px);
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(3deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-3deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
