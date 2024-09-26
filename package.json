@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
+    "preview": "npm run build && wrangler pages dev",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
