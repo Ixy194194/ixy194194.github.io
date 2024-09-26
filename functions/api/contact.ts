@@ -4,6 +4,9 @@ import { EventContext } from '@cloudflare/workers-types';
 // 環境変数の型を定義
 interface Env {
   TURNSTILE_SECRET_KEY: string;
+  MAILGUN_APIKEY: string;
+  NOTIFY_EMAIL: string;
+  MAILGUN_DOMAIN: string;
 }
 
 const schema = z.object({
@@ -21,8 +24,8 @@ export async function onRequest(context: EventContext<Env, '', {}>) {
   }
 
   try {
-    const formData = await context.request.formData();
-    const data = Object.fromEntries(formData);
+    const requestFormData = await context.request.formData();
+    const data = Object.fromEntries(requestFormData);
     const validatedData = schema.parse(data);
 
     // Turnstileの検証
@@ -47,8 +50,47 @@ export async function onRequest(context: EventContext<Env, '', {}>) {
       return new Response('Turnstile認証に失敗しました', { status: 400 });
     }
 
-    // todo: ここでメール送信の処理を行います
-    console.log(validatedData);
+    // メール送信の処理
+    const mailgunDomain = context.env.MAILGUN_DOMAIN;
+    const mailgunApiKey = context.env.MAILGUN_APIKEY;
+    const notifyEmail = context.env.NOTIFY_EMAIL;
+
+    const mailgunEndpoint = `https://api.mailgun.net/v3/${mailgunDomain}/messages`;
+
+    const emailBody = `
+    Webサイトで新しい問い合わせがありました。
+    ※このメールは送信専用です。
+
+    お名前: ${validatedData.name}
+    メールアドレス: ${validatedData.email}
+    件名: ${validatedData.subject || '(件名なし)'}
+    お問い合わせ内容: ${validatedData.message}
+    `;
+
+    const formData = new FormData();
+    formData.append('from', `Contact Form <noreply@${mailgunDomain}>`);
+    formData.append('to', notifyEmail);
+    formData.append('subject', '新しい問い合わせがありました');
+    formData.append('text', emailBody);
+
+    try {
+      const mailgunResponse = await fetch(mailgunEndpoint, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Basic ${btoa(`api:${mailgunApiKey}`)}`,
+        },
+        body: formData,
+      });
+
+      if (!mailgunResponse.ok) {
+        throw new Error('メール送信に失敗しました');
+      }
+
+      console.log('メール送信成功');
+    } catch (error) {
+      console.error('メール送信エラー:', error);
+      return new Response('メール送信に失敗しました', { status: 500 });
+    }
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
