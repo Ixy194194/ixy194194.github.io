@@ -1,12 +1,11 @@
-import React, { useState, useEffect, FC } from 'react';
+import React, { useState, useEffect, useRef, FC } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Link from 'next/link';
 import styles from './Header.module.scss';
 
 const HeaderComponent: FC = () => {
+  const navRef = useRef<HTMLElement>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(0);
 
   // メニューの開閉状態をトグルする
   const handleHamburgerClick = () => setIsMenuOpen(!isMenuOpen);
@@ -16,7 +15,6 @@ const HeaderComponent: FC = () => {
 
   // スクロール位置に応じてロゴを表示
   const handleScroll = () => {
-    setIsScrolled(window.scrollY > 1000);
     const logo = document.querySelector('.logo');
     if (window.scrollY > 500) {
       logo?.classList.add('active');
@@ -25,20 +23,13 @@ const HeaderComponent: FC = () => {
     }
   };
 
-  // 現在のウィンドウ幅を状態に保存する
-  const handleResize = () => setWindowWidth(window.innerWidth);
-
   useEffect(() => {
-    // ウィンドウ幅を取得
-    setWindowWidth(window.innerWidth);
-    // スクロールとリサイズイベントのリスナーを追加
+    // スクロールイベントのリスナーを追加
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleResize);
 
     // ページ移動時にイベントリスナーを削除
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -69,8 +60,8 @@ const HeaderComponent: FC = () => {
             </div>
           </div>
         </div>
-        <CSSTransition in={isMenuOpen} timeout={500} classNames="nav-transition">
-          <nav className={`nav ${isMenuOpen ? styles.open : ''}`}>
+        <CSSTransition nodeRef={navRef} in={isMenuOpen} timeout={500} classNames="nav-transition">
+          <nav ref={navRef} className={`nav ${isMenuOpen ? styles.open : ''}`}>
             <ul className={styles.navList}>
               {[
                 { name: 'Illustrations', nameKana: 'イラスト', link: '/illustrations' },

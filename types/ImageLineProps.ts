@@ -1,4 +1,4 @@
-export type ImageLineArray = [Array<JSX.Element>, Array<JSX.Element>];
+export type ImageLineArray = [Array<React.JSX.Element>, Array<React.JSX.Element>];
 
 export type ImageLineProps = {
   key: number;

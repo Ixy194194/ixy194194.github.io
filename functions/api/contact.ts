@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { EventContext } from '@cloudflare/workers-types';
+import type { EventContext } from '@cloudflare/workers-types';
 
 // 環境変数の型を定義
 interface Env {
@@ -44,7 +44,7 @@ export async function onRequest(context: EventContext<Env, '', {}>) {
       }
     );
 
-    const turnstileResult = await turnstileResponse.json();
+    const turnstileResult = z.object({ success: z.boolean() }).parse(await turnstileResponse.json());
 
     if (!turnstileResult.success) {
       return new Response('Turnstile認証に失敗しました', { status: 400 });
@@ -99,7 +99,7 @@ export async function onRequest(context: EventContext<Env, '', {}>) {
   } catch (error) {
     console.log(error);
     if (error instanceof z.ZodError) {
-      return new Response(JSON.stringify({ errors: error.errors }), {
+      return new Response(JSON.stringify({ errors: error.issues }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       });

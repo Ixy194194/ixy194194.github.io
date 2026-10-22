@@ -185,12 +185,15 @@ const IllustrationsComponent: FC = () => {
   // コンポーネントの初回レンダリング時に実行
   useEffect(() => {
     // イラストをシャッフル
-    setShuffledIllustrations(shuffleArray([...illustrations]));
+    const frame = requestAnimationFrame(() => {
+      setShuffledIllustrations(shuffleArray([...illustrations]));
+    });
     // ヘッダーのロゴを固定
     document.body.classList.add('fixedLogo');
 
     // ページ移管時にヘッダーのロゴ固定を解除
     return () => {
+      cancelAnimationFrame(frame);
       document.body.classList.remove('fixedLogo');
     };
   }, []);
